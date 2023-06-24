@@ -1,3 +1,4 @@
+// Importo las dependencias
 const fs = require('fs');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -7,6 +8,7 @@ const cheerio = require('cheerio');
 const file = 'url.txt';
 const spotdlCommand = 'spotdl download';
 
+// Esta función creará la carpeta para cada uno de los artistas que queramos descargar
 async function createArtistFolder(artistName) {
   const folderName = artistName.replace(/[\/:*?"<>|]/g, '_');
   try {
@@ -26,6 +28,7 @@ async function createArtistFolder(artistName) {
   }
 }
 
+// Esta función obtiene el nombre del artista haciendo una request a Spotify
 async function getArtistNameFromURL(url) {
   try {
     const response = await axios.get(url);
@@ -38,16 +41,13 @@ async function getArtistNameFromURL(url) {
   }
 }
 
+// Esta función lo que hace es descargar la música en la carpeta correspondiente
 async function downloadMusic(url, artistName) {
   const folderPath = await createArtistFolder(artistName);
   const command = `${spotdlCommand} ${url}`;
   try {
     const { stdout, stderr } = await exec(command, { cwd: folderPath });
     console.log(stdout);
-
-    // Aquí puedes mostrar el output en lugar de imprimirlo en la consola
-    // res.write(stdout);
-
     console.error(stderr);
   } catch (err) {
     console.error(`Error executing command: ${command}`);
@@ -55,6 +55,7 @@ async function downloadMusic(url, artistName) {
   }
 }
 
+// Esta función procesa las URL's de la lista url.txt
 async function processURLs() {
   try {
     const data = await fs.promises.readFile(file, 'utf-8');
@@ -72,5 +73,5 @@ async function processURLs() {
   }
 }
 
+// Lllamamos a la función y que comience el script!
 processURLs();
-
