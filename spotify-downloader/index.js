@@ -10,7 +10,7 @@ const spotdlCommand = 'spotdl download';
 async function createArtistFolder(artistName) {
   const folderName = artistName.replace(/[\/:*?"<>|]/g, '_');
   try {
-    const folderPath = `D:\\Escritorio\\Music\\${folderName}`; // Reemplaza esto con el directorio donde estará la carpeta que contenga las carpetas de cada artista. No tocal el "foldername"
+    const folderPath = `./${folderName}`;
     const folderExists = await fs.promises.access(folderPath, fs.constants.F_OK)
       .then(() => true)
       .catch(() => false);
