@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const rootFolder = './'; // Carpeta raíz desde la que iniciar la búsqueda
-const excludedDirectories = ['Amaral', 'Ana Belén y Víctor Manuel', 'Bangles', 'Bob Marley', 'Bon Jovi', 'Bruce Springsteen', 'Bryan Adams', 'Café Quijano', 'Chayanne', 'Christopher Cross', 'Cock Robin', 'Coldplay', 'Crowded House', 'Deacon Blue', 'Dire Strats', 'Especialistas', 'Estopa', 'Evanescence','Fito y Fitipaldis', 'Ilegales']; // Directorios excluidos del eliminador de versiones "Live" de las canciones
+const excludedDirectories = ['Carpeta1', 'Carpeta2']; // Directorios excluidos del eliminador de versiones "Live" de las canciones. Muchos artistas suelen subir las versiones "Live" de sus canciones, con esta línea lo que hacemos es pedirle al programa que conserve las versiones live de esos artistas
+
+// Esta función lo que hace es eliminar las versiones "live" de las canciones que no están en la lista de excludedDirectories
 async function deleteFilesWithLive(folderPath) {
   try {
     const files = await fs.promises.readdir(folderPath);
@@ -23,6 +25,7 @@ async function deleteFilesWithLive(folderPath) {
   }
 }
 
+// Esta función procesa las carpetas y mira si están en el array o no para eliminarlos
 async function processFolders() {
   try {
     const folders = await fs.promises.readdir(rootFolder);
@@ -42,4 +45,5 @@ async function processFolders() {
   }
 }
 
+// Llamamos a la función para que comience el programa
 processFolders();
