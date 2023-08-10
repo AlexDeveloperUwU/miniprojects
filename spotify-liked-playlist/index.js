@@ -12,6 +12,7 @@ const REDIRECT_URI = 'http://localhost:8888/callback';
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Página de login, aquí se obtienen las credenciales
 app.get('/login', (req, res) => {
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
@@ -23,6 +24,7 @@ app.get('/login', (req, res) => {
   );
 });
 
+// Ejecuta el código necesario para generar la playlist
 app.get('/callback', async (req, res) => {
   const code = req.query.code || null;
 
@@ -106,6 +108,7 @@ app.get('/callback', async (req, res) => {
   }
 });
 
+// Obtenemos las canciones que tenemos guardadas en favoritas
 async function getAllLikedSongs(accessToken) {
   let allLikedSongs = [];
   let offset = 0;

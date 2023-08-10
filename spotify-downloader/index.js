@@ -73,5 +73,5 @@ async function processURLs() {
   }
 }
 
-// Lllamamos a la función y que comience el script!
+// Llamamos a la función y que comience el script!
 processURLs();
