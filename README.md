@@ -20,3 +20,6 @@ Este proyecto, disponible en el repositorio [Reddit-Meme-Scrapper](https://githu
 LogrosBot es un bot de Discord que reacciona a los mensajes en un canal específico con un emoji en forma de copa. Puede ser una manera humorística y motivadora de reconocer logros o hitos en tu servidor de Discord.
 
 Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tareas específicas. Siéntete libre de explorar y utilizar estos scripts según tus necesidades. ¡Espero que encuentres útiles estas herramientas!
+
+### Twitter Tweet Deletion Script
+Este proyecto ofrece un script de JavaScript que puede utilizarse en el navegador para eliminar automáticamente los tweets de tu cuenta de Twitter desde la página de perfil. El script interactúa con la interfaz de Twitter y hace clic en los botones necesarios para eliminar los tweets no deseados.
