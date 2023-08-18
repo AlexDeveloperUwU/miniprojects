@@ -16,6 +16,8 @@ Con este script, puedes automatizar la creación de una lista de reproducción e
 ### Reddit Meme Scrapper
 Este proyecto, disponible en el repositorio [Reddit-Meme-Scrapper](https://github.com/AlexDevFiles/reddit-meme-database), se encarga de hacer "scrapping" en la página de Reddit para recopilar y guardar memes automáticamente. Una forma divertida de mantener tu base de datos de memes actualizada.
 
+En este repositorio hay un .zip que contiene una copia exacta del código por si el repositorio se llega a tirar.
+
 ### LogrosBot
 LogrosBot es un bot de Discord que reacciona a los mensajes en un canal específico con un emoji en forma de copa. Puede ser una manera humorística y motivadora de reconocer logros o hitos en tu servidor de Discord.
 
