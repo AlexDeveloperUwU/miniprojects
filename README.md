@@ -25,3 +25,6 @@ Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tar
 
 ### Twitter Tweet Deletion Script
 Este proyecto ofrece un script de JavaScript que puede utilizarse en el navegador para eliminar automáticamente los tweets de tu cuenta de Twitter desde la página de perfil. El script interactúa con la interfaz de Twitter y hace clic en los botones necesarios para eliminar los tweets no deseados.
+
+### Video Optimizer
+Este script de Node.js está diseñado para optimizar archivos de video en el directorio de entrada especificado utilizando la herramienta FFmpeg. Lee todos los archivos `.mp4` del directorio de entrada, aplica configuraciones de optimización utilizando FFmpeg y guarda los archivos optimizados en el directorio de salida.
