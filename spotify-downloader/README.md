@@ -1,11 +1,25 @@
-# Spotify Auto Downloader 
+# Spotify Auto Downloader
 
-Con este script lo que conseguimos es automatizar la descarga de música con spotdl de varios autores, de forma que no es necesaria interacción humana y se puede dejar funcionando sin ningún tipo de problema.
+Este script automatiza la descarga de música utilizando la herramienta "spotdl" para diversos artistas de Spotify. Esto se logra sin intervención humana, permitiendo que el proceso se ejecute de manera continua y sin complicaciones.
 
-ATENCIÓN: DEBES DE CONTAR CON NODE.JS v18 INSTALADO Y PYTHON EN LA ÚLTIMA VERSIÓN DISPONIBLE. ANTES DE EJCUTAR EL PROGRAMA, ASEGÚRATE DE CUMPLIR ESTE REQUISITO.
+**IMPORTANTE:** Asegúrate de tener **Node.js** versión 18 instalado y la última versión de **spotdl**. Cumplir con estos requisitos es crucial antes de ejecutar el programa.
 
-Para poder utilizarlo, debes de tener "spotdl" descargado e instalado con python, usa "pip install spotdl". Si no cuentas con ffmpeg, usa "spotdl --download-ffmpeg" para poder descargarlo.
+Para utilizar este script, debes tener la herramienta "spotdl" descargada e instalada en Python. Puedes instalarla utilizando el comando "pip install spotdl". Si no tienes el ejecutable FFmpeg, usa "spotdl --download-ffmpeg" para descargarlo.
 
-Lo único que debes de hacer es instalar las dependencias con "npm i", poner las URL de los artistas en "url.txt" siguiendo las instrucciones que hay allí y luego, ejecutar "node index.js".
+Los pasos a seguir son los siguientes:
 
-También puedes eliminar las versiones "en directo" de las canciones de cada artista ejecutando "node liveRemover.js", y si deseas conservar las de algún artista en concreto, puedes añadirlas en un array que está dentro de ese archivo para que no se ejecute en esas carpetas.
+1. Instala las dependencias con el comando "npm i".
+2. Coloca las URLs de los artistas en el archivo "url.txt", siguiendo las instrucciones proporcionadas en el mismo archivo.
+3. Ejecuta "node index.js" para iniciar la descarga de música.
+
+Si deseas eliminar las versiones en vivo de todos los artistas excepto alguno, puedes agregar su nombre en un array dentro del archivo "liveRemover.js" para evitar que se eliminen las versiones live de su carpeta.
+
+## Código Detallado
+
+### index.js
+
+Este archivo se encarga de descargar la música de los artistas utilizando la herramienta "spotdl" y organiza las canciones en carpetas correspondientes a cada artista.
+
+### liveRemover.js
+
+Este archivo elimina las versiones "en vivo" de las canciones, excepto las de los artistas que están excluidos del proceso.

@@ -12,10 +12,10 @@ const client = new Client({
 });
 
 client.on('messageCreate', async (message) => {
-  if (message.channel.id === "695569862096846851") {
+  if (message.channel.id === "000000000000000000") {
     console.log(message.content);
     message.react('🏆');
   }
 });
 
-client.login("")
+client.login("TOKEN")

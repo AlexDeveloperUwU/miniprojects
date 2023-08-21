@@ -1,16 +1,36 @@
-# Audio Merger with silences
-En este caso, el script de python lo que hará será juntar los audios de una carpeta que está preestablecida pero con una cantidad de segundos especificados entre clip y clip.
+## Fusión de Audio con Silencios Utilizando PyDub
 
-Este pequeño script me sirvió debido a que no tenía forma de hacerlo si no es con un editor de vídeo y con el portátil que tengo, no sería capaz ni de abrir el editor, con lo que, como buen programador que soy, diseñé este script.
+Este script en Python utiliza la librería PyDub para combinar archivos de audio ubicados en una carpeta específica, añadiendo pausas de duración definida entre cada segmento.
 
-## Uso
+### Requisitos Previos
+Asegúrate de tener la librería PyDub instalada en tu entorno. Si no la tienes instalada, puedes hacerlo mediante el siguiente comando:
 
-Primero, debes de ajustar la ruta de la carpeta de los ficheros.
+```bash
+pip install pydub
+```
 
-Luego, ajusta el número de audios que hay. Para hacerlo, debes de sumarle 1 al número de audios que tienes y ese número, cambiarlo donde se indica. Por ejemplo, si tienes 8 audios, el número será 9.
+### Cómo Utilizar el Script
 
-Lo siguiente que debes de hacer es cambiar la ruta del output.
+1. **Preparación de la Carpeta de Audio:**
 
-A continuación, cambia el nombre de los audios que tienes en el script. Te recomiendo que a los archivos, les pongas, por ejemplo, audio1, audio2... o que los numeres, es decir, 1,2... De esta forma, será más sencillo.
+   Antes de ejecutar el script, asegúrate de que la carpeta especificada (`carpeta_audio`) contenga los archivos de audio que deseas fusionar. Siéntete libre de seguir las recomendaciones para nombrar tus archivos de audio con el formato sugerido.
 
-Por último, ejecuta "pip install pydub" y a continuación, ejecuta "python main.py"
+2. **Ajuste de Parámetros:**
+
+   - `carpeta_audio`: Reemplaza la ruta de ejemplo por la ruta completa hacia la carpeta que contiene tus archivos de audio.
+   - `duracion_silencio`: Define la duración del silencio (en milisegundos) que deseas introducir entre los fragmentos de audio.
+
+3. **Ejecución del Script:**
+
+   Después de configurar los parámetros mencionados, ejecuta el script en tu entorno de Python. Asegúrate de que la variable `carpeta_audio` apunte a la ubicación correcta de tus archivos de audio.
+
+4. **Resultado:**
+
+   El script cargará los archivos de audio de la carpeta especificada, fusionará los segmentos con pausas entre ellos y generará un archivo de audio final con el nombre y ubicación definidos en `ruta_audio_final`.
+
+### Notas Adicionales
+
+- Este script utiliza la librería PyDub para manipular los archivos de audio y crear el audio final fusionado con silencios.
+- Asegúrate de reemplazar los nombres de archivo y las rutas con los valores correspondientes de tu proyecto.
+
+Recuerda que la efectividad y el resultado del script dependen de la correcta organización de tus archivos de audio y de la configuración de los parámetros. ¡Experimenta y ajusta según tus necesidades!
