@@ -10,7 +10,7 @@ Este es un script de JavaScript que puedes usar en el navegador para eliminar au
 
 3. Copia y pega el contenido del archivo `script.js` en la consola de desarrollador.
 
-4. En el código comentado donde dice "repetir x veces", busca el número 20 del "for" y cámbialo por el número de eces que quieras que se repita el proceso de eliminar un twit
+4. En el código comentado donde dice "repetir x veces", busca el número 20 del "for" y cámbialo por el número de veces que quieras que se repita el proceso de eliminar un twit
 
 5. Presiona Enter para ejecutar el script.
 
@@ -24,8 +24,12 @@ El script intentará eliminar tus tweets automáticamente. Ten en cuenta que los
 
 ## Aviso Legal
 
-Este script fue proporcionado con fines educativos e informativos. El uso indebido de este script podría violar los términos de servicio de Twitter u otras regulaciones. Úsalo bajo tu propia responsabilidad y asegúrate de cumplir con todas las políticas y regulaciones aplicables.
+Este script fue proporcionado con fines educativos e informativos. 
+
+El uso indebido de este script podría violar los términos de servicio de Twitter u otras regulaciones. 
+
+Úsalo bajo tu propia responsabilidad y asegúrate de cumplir con todas las políticas y regulaciones aplicables.
 
 ## Fecha de creación
 
-El script ha sido creado el día 17 de agosto de 2023, con lo que puede variar si es que la interfaz cambia
+El script ha sido creado el día 17 de agosto de 2023, con lo que puede no funcionar si es que la interfaz cambia posteriormente.
