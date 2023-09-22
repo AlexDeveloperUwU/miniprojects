@@ -6,6 +6,7 @@ Este repositorio contiene mis soluciones a los ejercicios de Codewars. Codewars 
 
 - Cada carpeta tiene el nombre del kata de Codewars al que corresponde la solución.
 - Dentro de cada carpeta, encontrarás el código de mi solución en el lenguaje de programación correspondiente (por ejemplo, Python, JavaScript, etc.).
+- Para algún kata, encontrarás varias soluciones, ya que algunas veces me gusta mejorarlas.
 
 ## Cómo Navegar
 
