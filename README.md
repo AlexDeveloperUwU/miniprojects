@@ -27,6 +27,9 @@ Este proyecto ofrece un script de JavaScript que puede utilizarse en el navegado
 ### Video Optimizer
 Este script de Node.js está diseñado para optimizar archivos de video en el directorio de entrada especificado utilizando la herramienta FFmpeg. Lee todos los archivos `.mp4` del directorio de entrada, aplica configuraciones de optimización utilizando FFmpeg y guarda los archivos optimizados en el directorio de salida.
 
+### CodeWars
+Esta carpeta contiene mis soluciones a los ejercicios de Codewars. Codewars es una plataforma en línea que ofrece desafíos de programación en varios niveles de dificultad. Aquí puedes encontrar mis soluciones y aprender cómo abordé estos desafíos.
+
 ## Palabras finales sobre los proyectos
 
 Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tareas específicas. Siéntete libre de explorar y utilizar estos scripts según tus necesidades. ¡Espero que encuentres útiles estas herramientas!
