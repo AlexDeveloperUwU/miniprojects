@@ -1,19 +1,19 @@
-# Título del Kata realizado:
-Disemvowel Trolls
+# Soluciones de Codewars
 
-## Descripción del Kata realizado:
-Trolls are attacking your comment section!
+Este repositorio contiene mis soluciones a los ejercicios de Codewars. Codewars es una plataforma en línea que ofrece desafíos de programación en varios niveles de dificultad. Aquí puedes encontrar mis soluciones y aprender cómo abordé estos desafíos.
 
-A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+## Estructura de Carpetas
 
-Your task is to write a function that takes a string and return a new string with all vowels removed.
+- Cada carpeta tiene el nombre del kata de Codewars al que corresponde la solución.
+- Dentro de cada carpeta, encontrarás el código de mi solución en el lenguaje de programación correspondiente (por ejemplo, Python, JavaScript, etc.).
+- Para algún kata, encontrarás varias soluciones, ya que algunas veces me gusta mejorarlas.
 
-For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+## Cómo Navegar
 
-Note: for this kata `y` isn't considered a vowel.
+Si estás interesado en una solución específica, simplemente navega por las carpetas y encuentra el kata que te interesa. Dentro de la carpeta del kata, verás el archivo de código fuente.
 
+## Contacto
 
-## Información del Kata realizado:
-Creado por: osuushi
-Publicado el: 12/2/2014
-URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/52fba66badcd10859f00097e)
+Si deseas contactarme o tienes alguna pregunta, puedes encontrarme en [mi perfil de Codewars](https://www.codewars.com/users/AlexDeveloperUwU).
+
+¡Espero que estas soluciones te sean útiles y que encuentres inspiración en ellas para tus propios desafíos de programación!
