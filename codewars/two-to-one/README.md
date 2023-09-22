@@ -15,5 +15,7 @@ longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
 ## Información del Kata realizado:
 Creado por: g964
+
 Publicado el: 26/11/2015
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/5656b6906de340bd1b0000ac)

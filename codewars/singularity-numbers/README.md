@@ -31,5 +31,7 @@ If you want to solve our problems, they are here:
 
 ## Información del Kata realizado:
 Creado por: mor1nch
+
 Publicado el: 9/3/2023
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/6409aa6df4a0b773ce29cc3d)

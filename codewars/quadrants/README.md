@@ -30,5 +30,7 @@ More on quadrants: [Quadrant (plane geometry) - Wikipedia](https://en.wikipedia.
 
 ## Información del Kata realizado:
 Creado por: EntityPlantt
+
 Publicado el: 16/4/2023
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/643af0fa9fa6c406b47c5399)

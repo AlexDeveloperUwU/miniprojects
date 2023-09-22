@@ -12,5 +12,7 @@ Complete the method/function so that it converts dash/underscore delimited words
 
 ## Información del Kata realizado:
 Creado por: jhoffner
+
 Publicado el: 25/7/2013
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/517abf86da9663f1d2000003)

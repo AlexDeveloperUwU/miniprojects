@@ -9,5 +9,7 @@ Constraint:
 
 ## Información del Kata realizado:
 Creado por: Orses
+
 Publicado el: 26/5/2019
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/5ce9c1000bab0b001134f5af)

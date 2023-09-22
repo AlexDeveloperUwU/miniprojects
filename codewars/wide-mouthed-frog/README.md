@@ -9,5 +9,7 @@ Your goal in this kata is to create complete the `mouth_size` method this method
 
 ## Información del Kata realizado:
 Creado por: nbeck
+
 Publicado el: 29/9/2016
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/57ec8bd8f670e9a47a000f89)

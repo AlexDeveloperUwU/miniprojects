@@ -17,5 +17,7 @@ Good Luck!
 
 ## Información del Kata realizado:
 Creado por: aSproule
+
 Publicado el: 18/8/2016
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/57b58827d2a31c57720012e8)

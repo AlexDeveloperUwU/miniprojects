@@ -50,15 +50,11 @@ function processSubfolders(folderPath) {
 
     // Verificar si es una carpeta
     if (fs.statSync(fullPath).isDirectory()) {
-      // Verificar si existe README.md
-      const readmePath = path.join(fullPath, 'README.md');
-      if (!fs.existsSync(readmePath)) {
-        // Leer URL.txt y ejecutar el script con el slug
-        const urlPath = path.join(fullPath, 'URL.txt');
-        if (fs.existsSync(urlPath)) {
-          const slug = fs.readFileSync(urlPath, 'utf8').trim();
-          executeScriptWithSlug(fullPath, slug);
-        }
+      // Leer URL.txt y ejecutar el script con el slug
+      const urlPath = path.join(fullPath, 'URL.txt');
+      if (fs.existsSync(urlPath)) {
+        const slug = fs.readFileSync(urlPath, 'utf8').trim();
+        executeScriptWithSlug(fullPath, slug);
       }
     }
   });

@@ -29,5 +29,7 @@ This means `(x-0) * (x-1) = 0`; when we do the multiplication this becomes `x^2 
 
 ## Información del Kata realizado:
 Creado por: user7552630
+
 Publicado el: 18/8/2019
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/5d59576768ba810001f1f8d6)

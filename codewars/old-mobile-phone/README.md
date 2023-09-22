@@ -41,5 +41,7 @@ For this assignment, write code that can calculate the amount of button presses 
 
 ## Información del Kata realizado:
 Creado por: mroth
+
 Publicado el: 30/12/2014
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/54a2e93b22d236498400134b)

@@ -11,5 +11,7 @@ mango(9, 5) ==> 30   # 6 mangoes for $5 per unit = $30; +3 mangoes for free
 
 ## Información del Kata realizado:
 Creado por: AartiK1
+
 Publicado el: 7/8/2016
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/57a77726bb9944d000000b06)

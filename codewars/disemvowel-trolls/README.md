@@ -12,5 +12,7 @@ Note: for this kata `y` isn't considered a vowel.
 
 ## Información del Kata realizado:
 Creado por: osuushi
+
 Publicado el: 12/2/2014
+
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/52fba66badcd10859f00097e)
