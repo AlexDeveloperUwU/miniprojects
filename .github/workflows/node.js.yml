@@ -18,7 +18,9 @@ jobs:
 
     - name: Install Dependencies and Run Script
       working-directory: ./codewars # Cambia al directorio 'codewars'
-      run: npm install
+      run: |
+        npm install
+        ls
 
     - name: Run Script
       working-directory: ./codewars # Cambia al directorio 'codewars'
