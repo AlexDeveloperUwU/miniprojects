@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - run: cd codewars
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3.6.0
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: cd codewars
     - run: npm i
     - run: node readme-gen.js
     - uses: EndBug/add-and-commit@v9
