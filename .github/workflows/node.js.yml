@@ -18,9 +18,11 @@ jobs:
 
     - name: Install Dependencies and Run Script
       working-directory: ./codewars # Cambia al directorio 'codewars'
-      run: |
-        npm install
-        node readme-gen.js
+      run: npm install
+
+    - name: Run Script
+      working-directory: ./codewars # Cambia al directorio 'codewars'
+      run: node readme-gen.js
 
     - name: Commit Changes
       uses: EndBug/add-and-commit@v9
