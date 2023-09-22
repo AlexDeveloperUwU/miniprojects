@@ -15,6 +15,7 @@ jobs:
       uses: actions/setup-node@v3.6.0
       with:
         node-version: ${{ matrix.node-version }}
+    - run: cd codewars
     - run: npm i
     - run: node readme-gen.js
     - uses: EndBug/add-and-commit@v9
