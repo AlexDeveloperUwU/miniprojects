@@ -3,7 +3,7 @@ const path = require('path');
 const axios = require('axios');
 
 // Ruta de la carpeta raíz
-const rootFolder = './codewars';
+const rootFolder = './';
 
 // Función para leer y ejecutar el script con el slug
 function executeScriptWithSlug(folderPath, slug) {
