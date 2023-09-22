@@ -1,7 +1,4 @@
-# Título del Kata realizado:
-Quadratic Coefficients Solver
-
-## Descripción del Kata realizado:
+# Quadratic Coefficients Solver
 In this Kata you are expected to find the coefficients of quadratic equation of the given two roots (`x1` and `x2`).
 
 Equation will be the form of ```ax^2 + bx + c = 0```

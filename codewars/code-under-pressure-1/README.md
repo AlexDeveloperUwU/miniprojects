@@ -1,7 +1,4 @@
-# Título del Kata realizado:
-You Can't Code Under Pressure #1
-
-## Descripción del Kata realizado:
+# You Can't Code Under Pressure #1
 Code as fast as you can! You need to double the integer and return it.
 
 ## Información del Kata realizado:

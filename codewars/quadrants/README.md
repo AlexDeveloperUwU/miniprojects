@@ -1,7 +1,4 @@
-# Título del Kata realizado:
-Quadrants
-
-## Descripción del Kata realizado:
+# Quadrants
 # Task
 Given a point in a [Euclidean plane](//en.wikipedia.org/wiki/Euclidean_plane) (`x` and `y`), return the quadrant the point exists in: `1`, `2`, `3` or `4` (integer). `x` and `y` are non-zero integers, therefore the given point never lies on the axes.
 

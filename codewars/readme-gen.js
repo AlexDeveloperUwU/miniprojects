@@ -20,10 +20,7 @@ function executeScriptWithSlug(folderPath, slug) {
         const kataUrl = data.url;
 
         // Generar el contenido del README.md
-        const readmeContent = `# Título del Kata realizado:
-${title}
-
-## Descripción del Kata realizado:
+        const readmeContent = `# ${title}
 ${description}
 
 ## Información del Kata realizado:

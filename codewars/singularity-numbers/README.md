@@ -1,7 +1,4 @@
-# Título del Kata realizado:
-Mysterious Singularity Numbers
-
-## Descripción del Kata realizado:
+# Mysterious Singularity Numbers
 This is a rather simple but interesting kata. Try to solve it using logic. The shortest solution can be fit into one line.
 
 

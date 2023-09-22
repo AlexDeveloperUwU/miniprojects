@@ -1,7 +1,4 @@
-# Título del Kata realizado:
-Fuel Calculator: Total Cost
-
-## Descripción del Kata realizado:
+# Fuel Calculator: Total Cost
 ```if:python,php
 In this kata you will have to write a function that takes `litres` and `price_per_litre` (**in dollar**) as arguments. 
 ```
