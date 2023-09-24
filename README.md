@@ -32,6 +32,9 @@ Esta carpeta contiene mis soluciones a los ejercicios de Codewars. Codewars es u
 
 En esta carpeta encontrarás cada uno de los ejercicios resueltos en una subcarpeta conteniendo el README.md que explica la descripción, tiene el título oficial y algo de información extra (obtenida de la API de CodeWars)
 
+### Currency Exchange Notifier
+Este script de Node.js verifica periódicamente la tasa de conversión de USD a EUR y envía una notificación a un canal de Discord cuando la tasa es igual o superior a una tasa deseada. Puedes utilizarlo para estar al tanto de las tasas de cambio favorables.
+
 ## Palabras finales sobre los proyectos
 
 Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tareas específicas. Siéntete libre de explorar y utilizar estos scripts según tus necesidades. ¡Espero que encuentres útiles estas herramientas!
