@@ -17,6 +17,7 @@ function actualizarDatos() {
       if (response.status === 200) {
         const data = response.data;
         const userData = data.data;
+        usuariosDAWData = data.data;
         function sumarHonorYScore(usuarios) {
           let totalHonor = 0;
           let totalScore = 0;
@@ -40,6 +41,7 @@ function actualizarDatos() {
       if (response.status === 200) {
         const data = response.data;
         const userData = data.data;
+        usuariosDAMData = data.data;
         function sumarHonorYScore(usuarios) {
           let totalHonor = 0;
           let totalScore = 0;
@@ -62,22 +64,22 @@ function actualizarDatos() {
   sleep(1000).then(() => {
     if (DAW_totalHonor > DAM_totalHonor) {
       diferenciaHonor = DAW_totalHonor - DAM_totalHonor;
-      txtHonor = `Gana DAW con una diferencia de ${diferenciaHonor} de honor`;
+      txtHonor = `En honor, gana 𝐃𝐀𝐖 con una diferencia de ${diferenciaHonor} de honor`;
     } else if (DAW_totalHonor < DAM_totalHonor) {
       diferenciaHonor = DAM_totalHonor - DAW_totalHonor;
-      txtHonor = `Gana DAM con una diferencia de ${diferenciaHonor} de honor`;
+      txtHonor = `En honor, gana 𝐃𝐀𝐌 con una diferencia de ${diferenciaHonor} de honor`;
     } else {
-      txtHonor = "Ambos tienen el mismo honor";
+      txtHonor = "Hay un empate en el honor de ambos clanes";
     }
 
     if (DAW_totalScore > DAM_totalScore) {
       diferenciaScore = DAW_totalScore - DAM_totalScore;
-      txtScore = `Gana DAW con una diferencia de ${diferenciaScore} de puntuación`;
+      txtScore = `En puntuación, gana 𝐃𝐀𝐖 con una diferencia de ${diferenciaScore} puntos`;
     } else if (DAW_totalScore < DAM_totalScore) {
       diferenciaScore = DAM_totalScore - DAW_totalScore;
-      txtScore = `Gana DAM con una diferencia de ${diferenciaScore} de puntuación`;
+      txtScore = `En puntuación, gana 𝐃𝐀𝐌 con una diferencia de ${diferenciaScore} puntos`;
     } else {
-      txtScore = "Ambos tienen la misma puntuación";
+      txtScore = "Hay un empate en la puntuación de ambos clanes";
     }
   });
 }
@@ -96,8 +98,11 @@ app.use(
   })
 );
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.set("view engine", "ejs")
+
+app.use('/static', express.static(__dirname + '/public'));
+
+app.set("views", require("path").join(__dirname, "views"))
 
 app.get("/", (req, res) => {
   res.render("index", {
@@ -107,6 +112,30 @@ app.get("/", (req, res) => {
     DAM_totalScore,
     txtHonor,
     txtScore,
+  });
+});
+
+app.get("/dam", (req, res) => {
+  res.render("dam", {
+    DAW_totalHonor,
+    DAW_totalScore,
+    DAM_totalHonor,
+    DAM_totalScore,
+    txtHonor,
+    txtScore,
+    usuariosDAM: usuariosDAMData,
+  });
+});
+
+app.get("/daw", (req, res) => {
+  res.render("daw", {
+    DAW_totalHonor,
+    DAW_totalScore,
+    DAM_totalHonor,
+    DAM_totalScore,
+    txtHonor,
+    txtScore,
+    usuariosDAW: usuariosDAWData,
   });
 });
 
