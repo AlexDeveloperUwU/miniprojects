@@ -98,11 +98,11 @@ app.use(
   })
 );
 
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 
-app.use('/static', express.static(__dirname + '/public'));
+app.use("/static", express.static(__dirname + "/public"));
 
-app.set("views", require("path").join(__dirname, "views"))
+app.set("views", require("path").join(__dirname, "views"));
 
 app.get("/", (req, res) => {
   res.render("index", {
