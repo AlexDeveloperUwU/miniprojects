@@ -42,77 +42,100 @@
       <img src="https://yt3.googleusercontent.com/ytc/AOPolaRdXSg8t_btJJfnf31oLo0__uAAreJdpf2xrM98=s900-c-k-c0x00ffffff-no-rj" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
       <span class="brand-text font-weight-light">IES Teis - CodeWars</span>
     </a>
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-item">
-          <a href="/" class="nav-link">
-            <i class="nav-icon fas fa-home"></i>
-            <p>Inicio</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/daw" class="nav-link">
-            <i class="nav-icon fas fa-server"></i>
-            <p>DAW</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/dam" class="nav-link">
-            <i class="nav-icon fas fa-server"></i>
-            <p>DAM</p>
-          </a>
-        </li>
-      </ul>
-    </nav>
+
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="/" class="nav-link active">
+              <i class="nav-icon fas fa-home"></i>
+              <p>Inicio</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/daw" class="nav-link">
+              <i class="nav-icon fas fa-code"></i>
+              <p>DAW</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/dam" class="nav-link">
+              <i class="nav-icon fas fa-code"></i>
+              <p>DAM</p>
+            </a>
+          </li>
+          <br />
+          <li class="nav-item">
+            <a href="https://www.codewars.com/" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>Web Oficial</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.edu.xunta.gal/centros/iesteis/aulavirtual/" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>AV del IES</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.edu.xunta.gal/centros/iesteis/" class="nav-link">
+              <i class="nav-icon fas fa-globe"></i>
+              <p>Web del IES</p>
+            </a>
+          </li>
+      </nav>
+    </div>
   </aside>
 
-  <div class="content-wrapper">
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Inicio</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="./">CodeWars</a></li>
-              <li class="breadcrumb-item active">Inicio</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl">
-            <div class="card card-outline card-info">
-              <div class="card-header">
-                <h3 class="card-title text-lg">
-                  Bienvenidx a la competición de CodeWars!
-                </h3>
-              </div>
-              <div class="card-body text-lg">
-                Aquí podrás consultar las estadísticas de CodeWars de ambos
-                ciclos.<br />
-                Para información más detallada acerca de cada ciclo, usa el
-                menú de la izquierda.<br />
-                En el apartado de cada ciclo aparece la información de cada
-                usuario y están ordenados según Honor y Puntuación.
-              </div>
+  <div class="wrapper">
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Inicio</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="./">CodeWars</a></li>
+                <li class="breadcrumb-item active">Inicio</li>
+              </ol>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xl">
-            <div class="card card-outline card-info">
-              <div class="card-header">
-                <h3 class="card-title text-lg">Estadísticas globales</h3>
+      </div>
+
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl">
+              <div class="card card-outline card-info">
+                <div class="card-header">
+                  <h3 class="card-title text-lg">
+                    Bienvenidx a la competición de CodeWars!
+                  </h3>
+                </div>
+                <div class="card-body text-lg">
+                  Aquí podrás consultar las estadísticas de CodeWars de ambos
+                  ciclos.<br />
+                  Para información más detallada acerca de cada ciclo, usa el
+                  menú de la izquierda.<br />
+                  En el apartado de cada ciclo aparece la información de cada
+                  usuario y están ordenados según Honor y Puntuación.
+                </div>
               </div>
-              <div class="card-body text-lg">
-                <%= txtHonor %><br />
-                <%= txtScore %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl">
+              <div class="card card-outline card-info">
+                <div class="card-header">
+                  <h3 class="card-title text-lg">Estadísticas globales</h3>
+                </div>
+                <div class="card-body text-lg">
+                  <%= txtHonor %><br />
+                  <%= txtScore %>
+                </div>
               </div>
             </div>
           </div>
@@ -120,13 +143,14 @@
       </div>
     </div>
   </div>
+
   <div class="wrapper">
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-inline">
-      Alejandro Verde & AdminLTE
-    </div>
-    <strong>IES De Teis - Módulo de Programación</strong>
-  </footer>
+    <footer class="main-footer">
+      <div class="float-right d-none d-sm-inline">
+        Alejandro Verde & <a href="https://adminlte.io/">AdminLTE</a>
+      </div>
+      <strong>IES De Teis - Módulo de Programación</strong>
+    </footer>
   </div>
 
   <!-- jQuery -->
