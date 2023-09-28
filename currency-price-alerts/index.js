@@ -1,3 +1,5 @@
+// PayPal => Tarifa normal de toda la vida - 2.5% (0.025)
+
 const axios = require('axios');
 
 // URL de la API de tasas de conversión
