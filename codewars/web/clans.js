@@ -104,7 +104,7 @@ app.use("/static", express.static(__dirname + "/public"));
 
 app.set("views", require("path").join(__dirname, "views"));
 
-app.get("/", (res) => {
+app.get("/", (req, res) => {
   res.render("index", {
     DAW_totalHonor,
     DAW_totalScore,
@@ -115,7 +115,7 @@ app.get("/", (res) => {
   });
 });
 
-app.get("/dam", (res) => {
+app.get("/dam", (req, res) => {
   res.render("dam", {
     DAW_totalHonor,
     DAW_totalScore,
@@ -127,7 +127,7 @@ app.get("/dam", (res) => {
   });
 });
 
-app.get("/daw", (res) => {
+app.get("/daw", (req, res) => {
   res.render("daw", {
     DAW_totalHonor,
     DAW_totalScore,
