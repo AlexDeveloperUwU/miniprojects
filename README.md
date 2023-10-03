@@ -48,6 +48,10 @@ Este script de Node.js verifica periódicamente la tasa de conversión de USD a 
 
 Este script de Node.js está diseñado para renombrar archivos en una carpeta eliminando la primera letra de sus nombres. Es útil si deseas realizar una operación de renombrado en masa en una carpeta que contiene archivos.
 
+### pyWinContext
+
+Distintos scripts de CMD que sirven para utilizar en pyWinContext, optimizando tiempo deshaciéndose de tareas repetitivas
+
 ## Palabras finales sobre los proyectos
 
 Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tareas específicas. Siéntete libre de explorar y utilizar estos scripts según tus necesidades. ¡Espero que encuentres útiles estas herramientas!
