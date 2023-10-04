@@ -2,10 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// Ruta de la carpeta raíz
 const rootFolder = './';
 
-// Función para leer y ejecutar el script con el slug
 function executeScriptWithSlug(folderPath, slug) {
   const kataUrl = `https://www.codewars.com/api/v1/code-challenges/${slug}`;
 
@@ -19,7 +17,6 @@ function executeScriptWithSlug(folderPath, slug) {
         const publishedAt = new Date(data.publishedAt).toLocaleDateString();
         const kataUrl = data.url;
 
-        // Generar el contenido del README.md
         const readmeContent = `# ${title}
 ${description}
 
@@ -30,7 +27,6 @@ Publicado el: ${publishedAt}
 
 URL: [Haz click aquí para ir al Kata](${kataUrl})`;
 
-        // Escribir el README.md en la misma carpeta
         fs.writeFileSync(path.join(folderPath, 'README.md'), readmeContent);
 
         console.log(`README.md creado para ${title}`);
@@ -43,14 +39,11 @@ URL: [Haz click aquí para ir al Kata](${kataUrl})`;
     });
 }
 
-// Función para procesar las subcarpetas
 function processSubfolders(folderPath) {
   fs.readdirSync(folderPath).forEach(item => {
     const fullPath = path.join(folderPath, item);
 
-    // Verificar si es una carpeta
     if (fs.statSync(fullPath).isDirectory()) {
-      // Leer URL.txt y ejecutar el script con el slug
       const urlPath = path.join(fullPath, 'URL.txt');
       if (fs.existsSync(urlPath)) {
         const slug = fs.readFileSync(urlPath, 'utf8').trim();
@@ -60,5 +53,4 @@ function processSubfolders(folderPath) {
   });
 }
 
-// Iniciar el procesamiento desde la carpeta raíz
 processSubfolders(rootFolder);
