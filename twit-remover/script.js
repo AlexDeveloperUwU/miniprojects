@@ -7,7 +7,7 @@ const eliminarTweets = async () => {
 
   botonMas.click();
   
-  await new Promise(resolve => setTimeout(resolve, 1000)); // Esperar a que aparezca el menú desplegable
+  await new Promise(resolve => setTimeout(resolve, 1000)); 
   
   const botonEliminar = [...document.querySelectorAll('div[role="menu"] div')].find(item => item.textContent === "Eliminar");
   if (!botonEliminar) {
@@ -17,7 +17,7 @@ const eliminarTweets = async () => {
 
   botonEliminar.click();
   
-  await new Promise(resolve => setTimeout(resolve, 1000)); // Esperar a que aparezca el cuadro de confirmación
+  await new Promise(resolve => setTimeout(resolve, 1000)); 
   
   const botonConfirmar = document.querySelector('[data-testid="confirmationSheetConfirm"]');
   if (!botonConfirmar) {
@@ -31,5 +31,5 @@ const eliminarTweets = async () => {
 // Repetir 20 veces
 for (let i = 0; i < 20; i++) {
   eliminarTweets();
-  await new Promise(resolve => setTimeout(resolve, 3000)); // Esperar antes de intentar de nuevo
+  await new Promise(resolve => setTimeout(resolve, 3000));
 }
