@@ -4,7 +4,25 @@ const fs = require("fs");
 let DAW_totalHonor, DAW_totalScore;
 let DAM_totalHonor, DAM_totalScore;
 
-function actualizarDatos() {
+async function actualizarDatos() {
+  // Descargar el JSON de la URL
+  try {
+    const response = await axios.get(
+      "https://raw.githubusercontent.com/AlexDeveloperUwU/miniprojects/jsonstorage/graph.json"
+    );
+
+    if (response.status === 200) {
+      // Guardar el contenido descargado en la carpeta ./jsonoutput
+      fs.writeFileSync("./jsonoutput/graph.json", JSON.stringify(response.data, null, 2));
+    } else {
+      console.error("Error al descargar el JSON desde la URL.");
+      return;
+    }
+  } catch (error) {
+    console.error("Error al descargar el JSON desde la URL:", error);
+    return;
+  }
+
   // Leer el archivo JSON existente
   let jsonData = require("./jsonoutput/graph.json");
 
@@ -72,19 +90,19 @@ function actualizarDatos() {
 
   const sleep = (waitTimeInMs) =>
     new Promise((resolve) => setTimeout(resolve, waitTimeInMs));
-  sleep(1000).then(() => {
-    jsonData.push({
-      date: currentDate.toISOString(),
-      DAW_totalHonor,
-      DAW_totalScore,
-      DAM_totalHonor,
-      DAM_totalScore,
-    });
-    fs.writeFileSync(
-      "./jsonoutput/graph.json",
-      JSON.stringify(jsonData, null, 2)
-    );
+  await sleep(1000);
+
+  // Agregar los datos al archivo JSON
+  jsonData.push({
+    date: currentDate.toISOString(),
+    DAW_totalHonor,
+    DAW_totalScore,
+    DAM_totalHonor,
+    DAM_totalScore,
   });
+
+  // Guardar el nuevo JSON con los datos actualizados
+  fs.writeFileSync("./jsonoutput/graph.json", JSON.stringify(jsonData, null, 2));
 }
 
 actualizarDatos();
