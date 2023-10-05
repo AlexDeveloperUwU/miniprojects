@@ -115,6 +115,17 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/stats", (req, res) => {
+  res.render("stats", {
+    DAW_totalHonor,
+    DAW_totalScore,
+    DAM_totalHonor,
+    DAM_totalScore,
+    txtHonor,
+    txtScore,
+  });
+});
+
 app.get("/dam", (req, res) => {
   res.render("dam", {
     DAW_totalHonor,

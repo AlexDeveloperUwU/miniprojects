@@ -50,11 +50,11 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/stats" class="nav-link">
-                <i class="nav-icon fas fa-chart-line"></i>
-                <p>Estadísticas</p>
-              </a>
-            </li>
+                <a href="/stats" class="nav-link active">
+                  <i class="nav-icon fas fa-chart-line"></i>
+                  <p>Estadísticas</p>
+                </a>
+              </li>
             <li class="nav-item">
               <a href="/daw" class="nav-link">
                 <i class="nav-icon fas fa-code"></i>
@@ -112,15 +112,11 @@
               <div class="col-xl">
                 <div class="card card-outline card-info">
                   <div class="card-header">
-                    <h3 class="card-title text-lg">
-                      Bienvenidx a la competición de CodeWars!
-                    </h3>
+                    <h3 class="card-title text-lg">Estadísticas globales</h3>
                   </div>
                   <div class="card-body text-lg">
-                    Aquí podrás consultar las estadísticas de CodeWars de ambos
-                    ciclos.<br />
-                    Para información más detallada acerca de cada ciclo, usa el
-                    menú de la izquierda.
+                    <%= txtHonor %><br />
+                    <%= txtScore %>
                   </div>
                 </div>
               </div>
@@ -129,12 +125,14 @@
               <div class="col-xl">
                 <div class="card card-outline card-info">
                   <div class="card-header">
-                    <h3 class="card-title text-lg">Información</h3>
+                    <h3 class="card-title text-lg">Gráfico de estadísticas globales</h3>
                   </div>
                   <div class="card-body text-lg">
-                    Supongo que querrás ver las estadísticas, cierto? En ese caso, <a href="/stats">puedes hacer click aquí para verlas</a>. <br /><br />
-                    Cada módulo tiene su propio apartado, en el cual los usuarios están ordenados según qué tanto honor y puntuación aporten al clan. <br />
-                    El código fuente de esta página está alojado en <a href="https://github.com/AlexDeveloperUwU/miniprojects/tree/master/codewars/web">Github</a>.
+                    <div style="width: 100%; text-align:center;">
+                      <canvas id="myChart" style="display: inline;"></canvas>
+                    </div>
+                    <br />
+                    <p><b><i>Nota: Los datos se actualizan todos los días a las 23:55, el día actual no se muestra hasta la actualización.</i></b></p>
                   </div>
                 </div>
               </div>
