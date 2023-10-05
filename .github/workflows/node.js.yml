@@ -17,24 +17,21 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 18.x
-
-    - name: Ir a la carpeta de CodeWars
-      run: cd codewars
-
-    - name: Ir a la carpeta de la web
-      run: ls
         
     - name: Instala dependencias
+      working-directory: ./codewars/web
       run: npm install
       
     - name: Ejecuta script
+      working-directory: ./codewars/web
       run: node jsonupdate.js
       
     - name: Borra node_modules
+      working-directory: ./codewars/web
       run: rm -rf node_modules
       
     - name: Publicación de la página en Github Pages
       uses: JamesIves/github-pages-deploy-action@v4.4.3
       with:
           branch: jsonstorage
-          folder: ./jsonoutput
+          folder: ./codewars/web/jsonoutput
