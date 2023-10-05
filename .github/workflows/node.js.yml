@@ -1,0 +1,39 @@
+name: Node.js v18 CI/CD
+
+on:
+  schedule:
+    - cron: '55 22 * * *'  # Ejecutar a las 22:55 UTC (equivalente a las 23:55 hora española)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+      
+    - name: Configura Node.js v18
+      uses: actions/setup-node@v2
+      with:
+        node-version: 18.x
+
+    - name: Ir a la carpeta de CodeWars
+      run: cd codewars
+
+    - name: Ir a la carpeta de la web
+      run: cd web
+        
+    - name: Instala dependencias
+      run: npm install
+      
+    - name: Ejecuta script
+      run: node jsonupdate.js
+      
+    - name: Borra node_modules
+      run: rm -rf node_modules
+      
+    - name: Publicación de la página en Github Pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      with:
+          branch: jsonstorage
+          folder: ./jsonoutput
