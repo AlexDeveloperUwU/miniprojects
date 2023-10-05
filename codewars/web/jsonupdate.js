@@ -90,7 +90,7 @@ async function actualizarDatos() {
 
   const sleep = (waitTimeInMs) =>
     new Promise((resolve) => setTimeout(resolve, waitTimeInMs));
-  await sleep(1000);
+  await sleep(10000);
 
   // Agregar los datos al archivo JSON
   jsonData.push({
