@@ -3,6 +3,7 @@ name: Node.js v18 CI/CD
 on:
   schedule:
     - cron: '55 22 * * *'  # Ejecutar a las 22:55 UTC (equivalente a las 23:55 hora española)
+  workflow_dispatch:  # Permitir la ejecución manual
 
 jobs:
   build:
