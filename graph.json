@@ -1,51 +1,51 @@
 [
   {
     "date": "2023-09-29T00:00:00.000Z",
-    "DAW_totalHonor": 3998,
-    "DAW_totalScore": 3494,
-    "DAM_totalHonor": 2138,
-    "DAM_totalScore": 3518
+    "DAW_totalHonor": 4674,
+    "DAW_totalScore": 3408,
+    "DAM_totalHonor": 1320,
+    "DAM_totalScore": 3479
   },
   {
     "date": "2023-09-30T00:00:00.000Z",
-    "DAW_totalHonor": 3360,
-    "DAW_totalScore": 1204,
-    "DAM_totalHonor": 4776,
-    "DAM_totalScore": 4635
+    "DAW_totalHonor": 4807,
+    "DAW_totalScore": 3409,
+    "DAM_totalHonor": 4356,
+    "DAM_totalScore": 3480
   },
   {
     "date": "2023-10-01T00:00:00.000Z",
-    "DAW_totalHonor": 3813,
-    "DAW_totalScore": 1315,
-    "DAM_totalHonor": 1016,
-    "DAM_totalScore": 2286
+    "DAW_totalHonor": 4808,
+    "DAW_totalScore": 3410,
+    "DAM_totalHonor": 4647,
+    "DAM_totalScore": 3718
   },
   {
     "date": "2023-10-02T00:00:00.000Z",
-    "DAW_totalHonor": 3832,
-    "DAW_totalScore": 4998,
-    "DAM_totalHonor": 1178,
-    "DAM_totalScore": 3830
+    "DAW_totalHonor": 4809,
+    "DAW_totalScore": 3411,
+    "DAM_totalHonor": 4648,
+    "DAM_totalScore": 3719
   },
   {
     "date": "2023-10-03T00:00:00.000Z",
-    "DAW_totalHonor": 1641,
-    "DAW_totalScore": 2312,
-    "DAM_totalHonor": 1527,
-    "DAM_totalScore": 2340
+    "DAW_totalHonor": 4985,
+    "DAW_totalScore": 3412,
+    "DAM_totalHonor": 4649,
+    "DAM_totalScore": 4039
   },
   {
     "date": "2023-10-04T00:00:00.000Z",
-    "DAW_totalHonor": 4168,
-    "DAW_totalScore": 3548,
-    "DAM_totalHonor": 2311,
-    "DAM_totalScore": 3572
+    "DAW_totalHonor": 4986,
+    "DAW_totalScore": 3413,
+    "DAM_totalHonor": 4650,
+    "DAM_totalScore": 4040
   },
   {
     "date": "2023-10-05T00:00:00.000Z",
-    "DAW_totalHonor": 1120,
-    "DAW_totalScore": 4047,
-    "DAM_totalHonor": 1292,
-    "DAM_totalScore": 3211
+    "DAW_totalHonor": 4987,
+    "DAW_totalScore": 3414,
+    "DAM_totalHonor": 4651,
+    "DAM_totalScore": 4041
   }
 ]
