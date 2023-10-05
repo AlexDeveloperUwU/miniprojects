@@ -22,7 +22,7 @@ jobs:
       run: cd codewars
 
     - name: Ir a la carpeta de la web
-      run: cd web
+      run: ls
         
     - name: Instala dependencias
       run: npm install
