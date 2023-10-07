@@ -39,3 +39,4 @@ jobs:
           folder: .
           git-config-name: "AlexDeveloperBot"
           git-config-email: "hosting@alexdevuwu.com"
+          commit-message: "Readmes generados para los nuevos ejercicios"
