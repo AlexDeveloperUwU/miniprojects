@@ -30,9 +30,9 @@ jobs:
       working-directory: ./codewars/web
       run: rm -rf node_modules
       
-    - name: Publicación de la página en Github Pages
-      uses: JamesIves/github-pages-deploy-action@v4.4.3
+    - name: Subir base de datos actualizada
+      uses: ad-m/github-push-action@master
       with:
-          branch: jsonstorage
-          folder: ./codewars/web/jsonoutput
-          token: ${{ secrets.BOT_TOKEN }}
+        github_token: ${{ secrets.BOT_TOKEN }}
+        branch: jsonstorage
+        directory: ./codewars/web/jsonoutput
