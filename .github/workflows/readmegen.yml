@@ -3,7 +3,7 @@ name: Codewars Readme Generator
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
