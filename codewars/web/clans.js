@@ -1,7 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 5421;
 
 let DAW_totalHonor = 0;
 let DAW_totalScore = 0;
