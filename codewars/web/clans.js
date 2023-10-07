@@ -76,36 +76,26 @@ app.get("/", (req, res) => {
 
 app.get("/stats", (req, res) => {
   res.render("stats", {
-    DAW_totalHonor,
-    DAW_totalScore,
-    DAM_totalHonor,
-    DAM_totalScore,
     txtHonor: getHonorText(),
     txtScore: getScoreText(),
   });
 });
 
 app.get("/dam", (req, res) => {
-  res.render("dam", {
-    DAW_totalHonor,
-    DAW_totalScore,
-    DAM_totalHonor,
-    DAM_totalScore,
-    txtHonor: getHonorText(),
-    txtScore: getScoreText(),
-    usuariosDAM: usuariosDAMData,
+  res.render("cursoTemplate", {
+    clan: "DAM",
+    totalHonor: DAM_totalHonor,
+    totalScore: DAM_totalScore,
+    userData: usuariosDAMData,
   });
 });
 
 app.get("/daw", (req, res) => {
-  res.render("daw", {
-    DAW_totalHonor,
-    DAW_totalScore,
-    DAM_totalHonor,
-    DAM_totalScore,
-    txtHonor: getHonorText(),
-    txtScore: getScoreText(),
-    usuariosDAW: usuariosDAWData,
+  res.render("cursoTemplate", {
+    clan: "DAW",
+    totalHonor: DAW_totalHonor,
+    totalScore: DAW_totalScore,
+    userData: usuariosDAWData,
   });
 });
 
