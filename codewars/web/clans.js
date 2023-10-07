@@ -1,107 +1,66 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
-const port = 5421;
+const port = process.env.PORT || 80;
 
-let DAW_totalHonor, DAW_totalScore;
-let DAM_totalHonor, DAM_totalScore;
-let diferenciaHonor;
-let diferenciaScore;
-let txtHonor;
-let txtScore;
+let DAW_totalHonor = 0;
+let DAW_totalScore = 0;
+let DAM_totalHonor = 0;
+let DAM_totalScore = 0;
+let usuariosDAWData = [];
+let usuariosDAMData = [];
 
-function actualizarDatos() {
-  axios
-    .get("https://www.codewars.com/api/v1/clans/1DAW_O_TEIS/members")
-    .then((response) => {
-      if (response.status === 200) {
-        const data = response.data;
-        const userData = data.data;
-        usuariosDAWData = data.data;
-        function sumarHonorYScore(usuarios) {
-          let totalHonor = 0;
-          let totalScore = 0;
-
-          for (const usuario of usuarios) {
-            totalHonor += usuario.honor;
-            totalScore += usuario.score;
-          }
-
-          DAW_totalHonor = totalHonor;
-          DAW_totalScore = totalScore;
-        }
-
-        sumarHonorYScore(userData);
-      }
-    });
-
-  axios
-    .get("https://www.codewars.com/api/v1/clans/2teis/members")
-    .then((response) => {
-      if (response.status === 200) {
-        const data = response.data;
-        const userData = data.data;
-        usuariosDAMData = data.data;
-        function sumarHonorYScore(usuarios) {
-          let totalHonor = 0;
-          let totalScore = 0;
-
-          for (const usuario of usuarios) {
-            totalHonor += usuario.honor;
-            totalScore += usuario.score;
-          }
-
-          DAM_totalHonor = totalHonor;
-          DAM_totalScore = totalScore;
-        }
-
-        sumarHonorYScore(userData);
-      }
-    });
-
-  const sleep = (waitTimeInMs) =>
-    new Promise((resolve) => setTimeout(resolve, waitTimeInMs));
-  sleep(1000).then(() => {
-    if (DAW_totalHonor > DAM_totalHonor) {
-      diferenciaHonor = DAW_totalHonor - DAM_totalHonor;
-      txtHonor = `En honor, gana 𝐃𝐀𝐖 con una diferencia de ${diferenciaHonor} de honor`;
-    } else if (DAW_totalHonor < DAM_totalHonor) {
-      diferenciaHonor = DAM_totalHonor - DAW_totalHonor;
-      txtHonor = `En honor, gana 𝐃𝐀𝐌 con una diferencia de ${diferenciaHonor} de honor`;
-    } else {
-      txtHonor = "Hay un empate en el honor de ambos clanes";
+async function fetchData(clanId) {
+  try {
+    const response = await axios.get(`https://www.codewars.com/api/v1/clans/${clanId}/members`);
+    if (response.status === 200) {
+      const userData = response.data.data;
+      return userData;
     }
-
-    if (DAW_totalScore > DAM_totalScore) {
-      diferenciaScore = DAW_totalScore - DAM_totalScore;
-      txtScore = `En puntuación, gana 𝐃𝐀𝐖 con una diferencia de ${diferenciaScore} puntos`;
-    } else if (DAW_totalScore < DAM_totalScore) {
-      diferenciaScore = DAM_totalScore - DAW_totalScore;
-      txtScore = `En puntuación, gana 𝐃𝐀𝐌 con una diferencia de ${diferenciaScore} puntos`;
-    } else {
-      txtScore = "Hay un empate en la puntuación de ambos clanes";
-    }
-  });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+  return [];
 }
 
-actualizarDatos();
+function calculateClanStats(userData, clan) {
+  let totalHonor = 0;
+  let totalScore = 0;
 
-setInterval(actualizarDatos, 60000);
+  for (const user of userData) {
+    totalHonor += user.honor;
+    totalScore += user.score;
+  }
 
-app.set("port", process.env.PORT || 80);
+  if (clan === "DAW") {
+    DAW_totalHonor = totalHonor;
+    DAW_totalScore = totalScore;
+  } else if (clan === "DAM") {
+    DAM_totalHonor = totalHonor;
+    DAM_totalScore = totalScore;
+  }
+}
+
+async function updateData() {
+  const [userDataDAW, userDataDAM] = await Promise.all([
+    fetchData("1DAW_O_TEIS"),
+    fetchData("2teis"),
+  ]);
+
+  usuariosDAWData = userDataDAW;
+  usuariosDAMData = userDataDAM;
+
+  calculateClanStats(userDataDAW, "DAW");
+  calculateClanStats(userDataDAM, "DAM");
+}
+
+updateData();
+setInterval(updateData, 60000);
 
 app.use(express.json());
-
-app.use(
-  express.urlencoded({
-    extended: false,
-  })
-);
-
+app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
-
 app.use("/static", express.static(__dirname + "/public"));
-
 app.set("views", require("path").join(__dirname, "views"));
 
 app.get("/", (req, res) => {
@@ -110,8 +69,8 @@ app.get("/", (req, res) => {
     DAW_totalScore,
     DAM_totalHonor,
     DAM_totalScore,
-    txtHonor,
-    txtScore,
+    txtHonor: getHonorText(),
+    txtScore: getScoreText(),
   });
 });
 
@@ -121,8 +80,8 @@ app.get("/stats", (req, res) => {
     DAW_totalScore,
     DAM_totalHonor,
     DAM_totalScore,
-    txtHonor,
-    txtScore,
+    txtHonor: getHonorText(),
+    txtScore: getScoreText(),
   });
 });
 
@@ -132,8 +91,8 @@ app.get("/dam", (req, res) => {
     DAW_totalScore,
     DAM_totalHonor,
     DAM_totalScore,
-    txtHonor,
-    txtScore,
+    txtHonor: getHonorText(),
+    txtScore: getScoreText(),
     usuariosDAM: usuariosDAMData,
   });
 });
@@ -144,8 +103,8 @@ app.get("/daw", (req, res) => {
     DAW_totalScore,
     DAM_totalHonor,
     DAM_totalScore,
-    txtHonor,
-    txtScore,
+    txtHonor: getHonorText(),
+    txtScore: getScoreText(),
     usuariosDAW: usuariosDAWData,
   });
 });
@@ -153,3 +112,19 @@ app.get("/daw", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+function getHonorText() {
+  return DAW_totalHonor > DAM_totalHonor
+    ? `En honor, gana 𝐃𝐀𝐖 con una diferencia de ${DAW_totalHonor - DAM_totalHonor} de honor`
+    : DAW_totalHonor < DAM_totalHonor
+    ? `En honor, gana 𝐃𝐀𝐌 con una diferencia de ${DAM_totalHonor - DAW_totalHonor} de honor`
+    : "Hay un empate en el honor de ambos clanes";
+}
+
+function getScoreText() {
+  return DAW_totalScore > DAM_totalScore
+    ? `En puntuación, gana 𝐃𝐀𝐖 con una diferencia de ${DAW_totalScore - DAM_totalScore} puntos`
+    : DAW_totalScore < DAM_totalScore
+    ? `En puntuación, gana 𝐃𝐀𝐌 con una diferencia de ${DAM_totalScore - DAW_totalScore} puntos`
+    : "Hay un empate en la puntuación de ambos clanes";
+}
