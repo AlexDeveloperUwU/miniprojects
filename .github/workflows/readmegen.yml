@@ -1,0 +1,43 @@
+name: Codewars Readme Generator
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'codewars/**'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+      
+    - name: Configura Node.js v18
+      uses: actions/setup-node@v2
+      with:
+        node-version: 18.x
+        
+    - name: Instala dependencias
+      working-directory: ./codewars/
+      run: npm install
+      
+    - name: Ejecuta script
+      working-directory: ./codewars/
+      run: node readme-gen.js
+      
+    - name: Borra node_modules
+      working-directory: ./codewars/
+      run: rm -rf node_modules
+      
+    - name: Publicación de la página en Github Pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      with:
+          token: ${{ secrets.BOT_TOKEN }}
+          branch: main
+          folder: .
+          git-config-name: "AlexDeveloperBot"
+          git-config-email: "hosting@alexdevuwu.com"
