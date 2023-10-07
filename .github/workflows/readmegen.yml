@@ -12,10 +12,10 @@ jobs:
     
     steps:
     - name: Checkout código
-      uses: actions/checkout@v2
+      uses: actions/checkout
       
     - name: Configura Node.js v18
-      uses: actions/setup-node@v2
+      uses: actions/setup-node
       with:
         node-version: 18.x
         
@@ -32,7 +32,7 @@ jobs:
       run: rm -rf node_modules
       
     - name: Publicación de la página en Github Pages
-      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      uses: JamesIves/github-pages-deploy-action
       with:
           token: ${{ secrets.BOT_TOKEN }}
           branch: master
