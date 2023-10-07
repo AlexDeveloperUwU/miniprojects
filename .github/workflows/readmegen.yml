@@ -35,7 +35,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4.4.3
       with:
           token: ${{ secrets.BOT_TOKEN }}
-          branch: main
+          branch: master
           folder: .
           git-config-name: "AlexDeveloperBot"
           git-config-email: "hosting@alexdevuwu.com"
