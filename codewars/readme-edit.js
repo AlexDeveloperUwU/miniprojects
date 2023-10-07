@@ -44,7 +44,7 @@ function processSubfolders(folderPath) {
     const fullPath = path.join(folderPath, item);
 
     if (fs.statSync(fullPath).isDirectory()) {
-      const urlPath = path.join(fullPath, 'URL.txt');
+      const urlPath = path.join(fullPath, 'url.txt');
       if (fs.existsSync(urlPath)) {
         const slug = fs.readFileSync(urlPath, 'utf8').trim();
         executeScriptWithSlug(fullPath, slug);

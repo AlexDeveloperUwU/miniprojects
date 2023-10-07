@@ -46,7 +46,7 @@ function processSubfolders(folderPath) {
     if (fs.statSync(fullPath).isDirectory()) {
       const readmePath = path.join(fullPath, 'README.md');
       if (!fs.existsSync(readmePath)) {
-        const urlPath = path.join(fullPath, 'URL.txt');
+        const urlPath = path.join(fullPath, 'url.txt');
         if (fs.existsSync(urlPath)) {
           const slug = fs.readFileSync(urlPath, 'utf8').trim();
           executeScriptWithSlug(fullPath, slug);
