@@ -77,7 +77,10 @@ async function actualizarDatos() {
     // Add new data to the JSON
     filteredData.push({
       date: new Date().toISOString(),
-      ...clanData,
+      DAW_totalHonor: clanData["1DAW_O_TEIS"].honor,
+      DAW_totalScore: clanData["1DAW_O_TEIS"].score,
+      DAM_totalHonor: clanData["2teis"].honor,
+      DAM_totalScore: clanData["2teis"].score,
     });
 
     // Save the updated JSON
