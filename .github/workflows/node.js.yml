@@ -1,4 +1,4 @@
-name: Node.js v18 CI/CD
+name: Database Updater
 
 on:
   schedule:
@@ -35,3 +35,4 @@ jobs:
       with:
           branch: jsonstorage
           folder: ./codewars/web/jsonoutput
+          token: ${{ secrets.BOT_TOKEN }}
