@@ -1,10 +1,9 @@
-// PayPal => Tarifa normal de toda la vida - 2.5% (0.025)
-
 const axios = require('axios');
 
 const API_URL = 'https://v6.exchangerate-api.com/v6/TOKEN/latest/USD';
 const WEBHOOK_URL = 'DISCORD WEBHOOK URL';
-const INTERVALO_VERIFICACION = 175000;
+const INTERVALO_VERIFICACION = 3600000; // Cada hora (en milisegundos)
+const TASA_DESCUENTO = 0.025; // 2.5%
 
 async function enviarMensajeDiscord(mensaje) {
   await axios.post(WEBHOOK_URL, {
@@ -20,13 +19,11 @@ async function verificarTasasDeConversion() {
     if (response.status === 200) {
       const data = response.data;
       const tasaUSDToEUR = data.conversion_rates.EUR;
-      const mejorTasa = 0.94;
+      const tasaActualizada = tasaUSDToEUR - TASA_DESCUENTO;
 
-      if (tasaUSDToEUR >= mejorTasa) {
-        const mensaje = `¡La tasa de conversión USD a EUR es favorable (${tasaUSDToEUR})!`;
-        await enviarMensajeDiscord(mensaje);
-        console.log('Mensaje enviado a Discord:', mensaje);
-      }
+      const mensaje = `La tasa de conversión USD a EUR es ${tasaActualizada.toFixed(2)}`;
+      await enviarMensajeDiscord(mensaje);
+      console.log('Mensaje enviado a Discord:', mensaje);
     } else {
       console.error('No se pudo obtener la tasa de conversión.');
     }
