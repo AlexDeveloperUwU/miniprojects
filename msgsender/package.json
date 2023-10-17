@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . Local Message Sender --platform=win32 --arch=x64 --overwrite --icon=chat.ico --app-version=1.0.0"
+    "package": "electron-packager . lms --platform=win32 --arch=x64 --overwrite --icon=chat.ico --app-version=1.0.0"
   },
   "author": "AlexDevUwU",
   "license": "MIT",
