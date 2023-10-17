@@ -52,6 +52,9 @@ Este script de Node.js está diseñado para renombrar archivos en una carpeta el
 
 Distintos scripts de CMD que sirven para utilizar en pyWinContext, optimizando tiempo deshaciéndose de tareas repetitivas
 
+### Local Message Sender
+Local Message Sender es una aplicación Electron que te permite enviar mensajes a otros equipos en tu red local utilizando el comando ```msg``` en Windows. Proporciona una interfaz amigable para ingresar la dirección IP del equipo de destino y el mensaje que deseas enviar.
+
 ## Palabras finales sobre los proyectos
 
 Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tareas específicas. Siéntete libre de explorar y utilizar estos scripts según tus necesidades. ¡Espero que encuentres útiles estas herramientas!
