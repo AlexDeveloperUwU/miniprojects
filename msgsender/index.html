@@ -54,7 +54,7 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <input id="serverIP" type="text" class="validate">
+          <input id="serverIP" type="text" class="validate" value="192.168.">
           <label for="serverIP">IP del Equipo</label>
         </div>
       </div>
@@ -101,7 +101,7 @@
       });
   
       limpiarBtn.addEventListener('click', function() {
-        serverIPInput.value = '';
+        serverIPInput.value = '192.168.';
         mensajeTextarea.value = '';
       });
     });
