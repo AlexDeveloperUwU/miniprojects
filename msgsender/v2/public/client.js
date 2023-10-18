@@ -35,5 +35,6 @@ socket.on("message", (message) => {
   }
 
   messagesContainer.appendChild(li);
+  
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 });

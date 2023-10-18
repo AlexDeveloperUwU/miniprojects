@@ -15,7 +15,25 @@ io.on("connection", (socket) => {
   socket.on("message", (message) => {
     io.emit("message", `${clientIp} => ${message}`);
     if (message.toLowerCase().includes("hola")) {
-      const botResponse = "¡Hola! Soy un bot.";
+      const botResponse = "¡Hola! ¿Qué tal?";
+      setTimeout(() => {
+        io.emit("message", `Bot: ${botResponse}`);
+      }, 1000);
+    }
+    if (message.toLowerCase().includes("patri")) {
+      const botResponse = "TODO ACABA AQUÍ";
+      setTimeout(() => {
+        io.emit("message", `Bot: ${botResponse}`);
+      }, 1000);
+    }
+    if (message.toLowerCase().includes("ágil")) {
+      const botResponse = "Querrás decir 𝒶𝓎𝒶𝒾𝓁";
+      setTimeout(() => {
+        io.emit("message", `Bot: ${botResponse}`);
+      }, 1000);
+    }
+    if (message.toLowerCase().includes("noemí")) {
+      const botResponse = "¿Dices la 𝒾𝓃𝑔𝑒𝓃𝒾𝑒𝓇𝒶?";
       setTimeout(() => {
         io.emit("message", `Bot: ${botResponse}`);
       }, 1000);
