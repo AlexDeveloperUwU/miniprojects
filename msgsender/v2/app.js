@@ -9,11 +9,12 @@ const io = socketIo(server);
 app.use(express.static(__dirname + "/public"));
 
 io.on("connection", (socket) => {
-  const clientIp = socket.handshake.address.replace(/^::ffff:/, ""); // Eliminar '::ffff:' de la dirección IP
+  const clientIp = socket.handshake.address.replace(/^::ffff:/, "");
+  const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   console.log(`Usuario conectado desde la dirección IP: ${clientIp}`);
 
   socket.on("message", (message) => {
-    io.emit("message", `${clientIp} => ${message}`);
+    io.emit("message", `${clientIp} ${timestamp} => ${message}`);
     if (message.toLowerCase().includes("hola")) {
       const botResponse = "¡Hola! ¿Qué tal?";
       setTimeout(() => {
