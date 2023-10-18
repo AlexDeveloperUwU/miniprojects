@@ -14,6 +14,12 @@ io.on('connection', (socket) => {
 
   socket.on('message', (message) => {
     io.emit('message', `${clientIp} => ${message}`);
+    if (message.toLowerCase().includes('hola')) {
+      const botResponse = '¡Hola! Soy un bot.';
+      setTimeout(() => {
+        io.emit('message', `Bot: ${botResponse}`);
+      }, 1000);
+    }
   });
 });
 
