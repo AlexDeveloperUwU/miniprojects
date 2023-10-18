@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chat Local</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .collection {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .collection-item {
+      background-color: #E0E0E0;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
+
+    .collection-item:last-child {
+      margin-bottom: 0;
+    }
+
+    #message {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3 class="center-align">Chat Local</h3>
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <div class="card">
+          <div class="card-content">
+            <ul id="messages" class="collection"></ul>
+          </div>
+          <div class="card-action">
+            <div class="input-field">
+              <textarea id="message" class="materialize-textarea"></textarea>
+              <label for="message">Mensaje</label>
+            </div>
+            <a id="sendButton" class="waves-effect waves-light btn">Enviar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
