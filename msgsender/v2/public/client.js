@@ -35,6 +35,8 @@ socket.on("message", (message) => {
   }
 
   messagesContainer.appendChild(li);
-  
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+  const notificationSound = document.getElementById("notificationSound");
+  notificationSound.play();
 });
