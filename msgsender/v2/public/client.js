@@ -28,7 +28,7 @@ socket.on("message", (message) => {
     const username = parts[0];
     const messageText = parts[1];
 
-    const messageHTML = `<b>${username} =></b> ${messageText}`;
+    const messageHTML = `<b>${username}</b> ${messageText}`;
     li.innerHTML = messageHTML;
   } else {
     li.textContent = message;
