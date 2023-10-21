@@ -1,12 +1,5 @@
 [
   {
-    "date": "2023-10-14T21:31:00.594Z",
-    "DAW_totalHonor": 1329,
-    "DAW_totalScore": 1341,
-    "DAM_totalHonor": 3171,
-    "DAM_totalScore": 2714
-  },
-  {
     "date": "2023-10-15T21:30:53.411Z",
     "DAW_totalHonor": 1329,
     "DAW_totalScore": 1341,
@@ -47,5 +40,12 @@
     "DAW_totalScore": 1397,
     "DAM_totalHonor": 3572,
     "DAM_totalScore": 3283
+  },
+  {
+    "date": "2023-10-21T21:31:17.068Z",
+    "DAW_totalHonor": 1390,
+    "DAW_totalScore": 1407,
+    "DAM_totalHonor": 3770,
+    "DAM_totalScore": 3503
   }
 ]
