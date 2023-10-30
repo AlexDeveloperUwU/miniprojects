@@ -1,7 +1,7 @@
 const axios = require("axios");
 const fs = require("fs");
 
-const clanNames = ["1DAW_O_TEIS", "2teis", "losers.js"];
+const clanNames = ["1DAW_O_TEIS", "2teis", "loosers.js"];
 const clanData = {};
 
 async function fetchClanMemberData(clanName) {
@@ -85,8 +85,8 @@ async function actualizarDatos() {
       DAW_totalScore: clanData["1DAW_O_TEIS"].score,
       DAM_totalHonor: clanData["2teis"].honor,
       DAM_totalScore: clanData["2teis"].score,
-      losers_totalHonor: clanData["losers.js"].honor, // Agrega estadísticas del nuevo clan "losers"
-      losers_totalScore: clanData["losers.js"].score, // Agrega estadísticas del nuevo clan "losers"
+      loosers_totalHonor: clanData["loosers.js"].honor,
+      loosers_totalScore: clanData["loosers.js"].score,
     });
 
     // Save the updated JSON

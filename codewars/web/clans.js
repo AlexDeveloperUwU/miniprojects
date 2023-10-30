@@ -7,11 +7,11 @@ let DAW_totalHonor = 0;
 let DAW_totalScore = 0;
 let DAM_totalHonor = 0;
 let DAM_totalScore = 0;
-let losers_totalHonor = 0;
-let losers_totalScore = 0;
+let loosers_totalHonor = 0;
+let loosers_totalScore = 0;
 let usuariosDAWData = [];
 let usuariosDAMData = [];
-let usuariosLosersData = [];
+let usuariosLoosersData = [];
 
 async function fetchData(clanId) {
   try {
@@ -43,6 +43,9 @@ function calculateClanStats(userData, clan) {
   } else if (clan === "DAM") {
     DAM_totalHonor = totalHonor;
     DAM_totalScore = totalScore;
+  } else if (clan === "loosers") {
+    loosers_totalHonor = totalHonor;
+    loosers_totalScore = totalScore;
   }
 }
 
@@ -50,16 +53,16 @@ async function updateData() {
   const [userDataDAW, userDataDAM] = await Promise.all([
     fetchData("1DAW_O_TEIS"),
     fetchData("2teis"),
-    fetchData("losers.js"),
+    fetchData("loosers.js"),
   ]);
 
   usuariosDAWData = userDataDAW;
   usuariosDAMData = userDataDAM;
-  usuariosLosersData = userDataLosers;
+  usuariosLoosersData = userDataLoosers;
 
   calculateClanStats(userDataDAW, "DAW");
   calculateClanStats(userDataDAM, "DAM");
-  calculateClanStats(userDataLosers, "Losers");
+  calculateClanStats(userDataLoosers, "loosers.js");
 }
 
 updateData();
@@ -107,12 +110,12 @@ app.get("/daw", (req, res) => {
   });
 });
 
-app.get("/losers", (req, res) => {
+app.get("/loosers", (req, res) => {
   res.render("cursoTemplate", {
-    clan: "losers",
-    totalHonor: losers_totalHonor,
-    totalScore: losers_totalScore,
-    userData: usuariosLosersData,
+    clan: "loosers.js",
+    totalHonor: loosers_totalHonor,
+    totalScore: loosers_totalScore,
+    userData: usuariosLoosersData,
   });
 });
 
@@ -124,7 +127,7 @@ function getHonorText() {
   const honorComparisons = [
     { clan: "DAW", total: DAW_totalHonor },
     { clan: "DAM", total: DAM_totalHonor },
-    { clan: "losers", total: losers_totalHonor },
+    { clan: "loosers.js", total: loosers_totalHonor },
   ];
   honorComparisons.sort((a, b) => b.total - a.total);
 
@@ -146,7 +149,7 @@ function getScoreText() {
   const scoreComparisons = [
     { clan: "DAW", total: DAW_totalScore },
     { clan: "DAM", total: DAM_totalScore },
-    { clan: "losers", total: losers_totalScore },
+    { clan: "loosers.js", total: loosers_totalScore },
   ];
   scoreComparisons.sort((a, b) => b.total - a.total);
 

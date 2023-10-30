@@ -71,9 +71,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/losers" class="nav-link">
+            <a href="/loosers" class="nav-link">
               <i class="nav-icon fas fa-code"></i>
-              <p>Losers</p>
+              <p>Loosers</p>
             </a>
           </li>
           <br />
@@ -188,8 +188,8 @@
           const dawScore = data.map(item => item.DAW_totalScore);
           const damHonor = data.map(item => item.DAM_totalHonor);
           const damScore = data.map(item => item.DAM_totalScore);
-          const losersHonor = data.map(item => item.losers_totalHonor); // Agrega datos del nuevo clan "losers"
-          const losersScore = data.map(item => item.losers_totalScore); // Agrega datos del nuevo clan "losers"
+          const loosersHonor = data.map(item => item.loosers_totalHonor);
+          const loosersScore = data.map(item => item.loosers_totalScore);
 
           var ctx = document.getElementById('myChart').getContext('2d');
           var myChart = new Chart(ctx, {
@@ -225,15 +225,15 @@
                   fill: false,
                 },
                 {
-                  label: 'Honor Losers',
-                  data: losersHonor,
+                  label: 'Honor Loosers',
+                  data: loosersHonor,
                   borderColor: 'rgba(153, 102, 255, 1)',
                   borderWidth: 2,
                   fill: false,
                 },
                 {
-                  label: 'Puntuación Losers',
-                  data: losersScore,
+                  label: 'Puntuación Loosers',
+                  data: loosersScore,
                   borderColor: 'rgba(255, 159, 64, 1)',
                   borderWidth: 2,
                   fill: false,
