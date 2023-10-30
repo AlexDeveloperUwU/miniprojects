@@ -50,19 +50,23 @@ function calculateClanStats(userData, clan) {
 }
 
 async function updateData() {
-  const [userDataDAW, userDataDAM] = await Promise.all([
-    fetchData("1DAW_O_TEIS"),
-    fetchData("2teis"),
-    fetchData("loosers.js"),
-  ]);
+  try {
+    const [userDataDAW, userDataDAM, userDataLoosers] = await Promise.all([
+      fetchData("1DAW_O_TEIS"),
+      fetchData("2teis"),
+      fetchData("loosers.js"),
+    ]);
 
-  usuariosDAWData = userDataDAW;
-  usuariosDAMData = userDataDAM;
-  usuariosLoosersData = userDataLoosers;
+    usuariosDAWData = userDataDAW;
+    usuariosDAMData = userDataDAM;
+    usuariosLoosersData = userDataLoosers;
 
-  calculateClanStats(userDataDAW, "DAW");
-  calculateClanStats(userDataDAM, "DAM");
-  calculateClanStats(userDataLoosers, "loosers.js");
+    calculateClanStats(userDataDAW, "DAW");
+    calculateClanStats(userDataDAM, "DAM");
+    calculateClanStats(userDataLoosers, "loosers.js");
+  } catch (error) {
+    console.error("Error updating data:", error);
+  }
 }
 
 updateData();
