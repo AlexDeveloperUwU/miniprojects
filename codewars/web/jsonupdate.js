@@ -85,8 +85,8 @@ async function actualizarDatos() {
       DAW_totalScore: clanData["1DAW_O_TEIS"].score,
       DAM_totalHonor: clanData["2teis"].honor,
       DAM_totalScore: clanData["2teis"].score,
-      losers_totalHonor: clanData["losers"].honor, // Agrega estadísticas del nuevo clan "losers"
-      losers_totalScore: clanData["losers"].score, // Agrega estadísticas del nuevo clan "losers"
+      losers_totalHonor: clanData["losers.js"].honor, // Agrega estadísticas del nuevo clan "losers"
+      losers_totalScore: clanData["losers.js"].score, // Agrega estadísticas del nuevo clan "losers"
     });
 
     // Save the updated JSON
