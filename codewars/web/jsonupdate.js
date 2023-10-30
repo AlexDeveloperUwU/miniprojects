@@ -1,12 +1,14 @@
 const axios = require("axios");
 const fs = require("fs");
 
-const clanNames = ["1DAW_O_TEIS", "2teis"];
+const clanNames = ["1DAW_O_TEIS", "2teis", "losers.js"];
 const clanData = {};
 
 async function fetchClanMemberData(clanName) {
   try {
-    const response = await axios.get(`https://www.codewars.com/api/v1/clans/${clanName}/members`);
+    const response = await axios.get(
+      `https://www.codewars.com/api/v1/clans/${clanName}/members`
+    );
     if (response.status === 200) {
       return response.data;
     }
@@ -19,7 +21,9 @@ async function fetchClanMemberData(clanName) {
 
 async function fetchStats() {
   try {
-    const response = await axios.get("https://raw.githubusercontent.com/AlexDeveloperUwU/miniprojects/jsonstorage/graph.json");
+    const response = await axios.get(
+      "https://raw.githubusercontent.com/AlexDeveloperUwU/miniprojects/jsonstorage/graph.json"
+    );
     if (response.status === 200) {
       return response.data;
     }
@@ -81,6 +85,8 @@ async function actualizarDatos() {
       DAW_totalScore: clanData["1DAW_O_TEIS"].score,
       DAM_totalHonor: clanData["2teis"].honor,
       DAM_totalScore: clanData["2teis"].score,
+      losers_totalHonor: clanData["losers"].honor, // Agrega estadísticas del nuevo clan "losers"
+      losers_totalScore: clanData["losers"].score, // Agrega estadísticas del nuevo clan "losers"
     });
 
     // Save the updated JSON
