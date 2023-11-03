@@ -7,12 +7,17 @@ let DAW_totalHonor = 0;
 let DAW_totalScore = 0;
 let DAM_totalHonor = 0;
 let DAM_totalScore = 0;
+let loosers_totalHonor = 0;
+let loosers_totalScore = 0;
 let usuariosDAWData = [];
 let usuariosDAMData = [];
+let usuariosLoosersData = [];
 
 async function fetchData(clanId) {
   try {
-    const response = await axios.get(`https://www.codewars.com/api/v1/clans/${clanId}/members`);
+    const response = await axios.get(
+      `https://www.codewars.com/api/v1/clans/${clanId}/members`
+    );
     if (response.status === 200) {
       const userData = response.data.data;
       return userData;
@@ -38,20 +43,30 @@ function calculateClanStats(userData, clan) {
   } else if (clan === "DAM") {
     DAM_totalHonor = totalHonor;
     DAM_totalScore = totalScore;
+  } else if (clan === "loosers") {
+    loosers_totalHonor = totalHonor;
+    loosers_totalScore = totalScore;
   }
 }
 
 async function updateData() {
-  const [userDataDAW, userDataDAM] = await Promise.all([
-    fetchData("1DAW_O_TEIS"),
-    fetchData("2teis"),
-  ]);
+  try {
+    const [userDataDAW, userDataDAM, userDataLoosers] = await Promise.all([
+      fetchData("1DAW_O_TEIS"),
+      fetchData("2teis"),
+      fetchData("loosers.js"),
+    ]);
 
-  usuariosDAWData = userDataDAW;
-  usuariosDAMData = userDataDAM;
+    usuariosDAWData = userDataDAW;
+    usuariosDAMData = userDataDAM;
+    usuariosLoosersData = userDataLoosers;
 
-  calculateClanStats(userDataDAW, "DAW");
-  calculateClanStats(userDataDAM, "DAM");
+    calculateClanStats(userDataDAW, "DAW");
+    calculateClanStats(userDataDAM, "DAM");
+    calculateClanStats(userDataLoosers, "loosers.js");
+  } catch (error) {
+    console.error("Error updating data:", error);
+  }
 }
 
 updateData();
@@ -99,22 +114,59 @@ app.get("/daw", (req, res) => {
   });
 });
 
+app.get("/loosers", (req, res) => {
+  res.render("cursoTemplate", {
+    clan: "loosers.js",
+    totalHonor: loosers_totalHonor,
+    totalScore: loosers_totalScore,
+    userData: usuariosLoosersData,
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
 function getHonorText() {
-  return DAW_totalHonor > DAM_totalHonor
-    ? `En honor, gana 𝐃𝐀𝐖 con una diferencia de ${DAW_totalHonor - DAM_totalHonor} de honor`
-    : DAW_totalHonor < DAM_totalHonor
-    ? `En honor, gana 𝐃𝐀𝐌 con una diferencia de ${DAM_totalHonor - DAW_totalHonor} de honor`
-    : "Hay un empate en el honor de ambos clanes";
+  const honorComparisons = [
+    { clan: "DAW", total: DAW_totalHonor },
+    { clan: "DAM", total: DAM_totalHonor },
+    { clan: "loosers.js", total: loosers_totalHonor },
+  ];
+  honorComparisons.sort((a, b) => b.total - a.total);
+
+  const [winner] = honorComparisons;
+  const runnerUps = honorComparisons.filter(
+    (clan) => clan.total === honorComparisons[1].total
+  );
+
+  if (runnerUps.length === 0) {
+    return `En honor, gana ${winner.clan} con ${winner.total} de honor`;
+  } else {
+    return `Hay un empate en el honor entre ${runnerUps
+      .map((clan) => clan.clan)
+      .join(" y ")} con ${runnerUps[0].total} de honor`;
+  }
 }
 
 function getScoreText() {
-  return DAW_totalScore > DAM_totalScore
-    ? `En puntuación, gana 𝐃𝐀𝐖 con una diferencia de ${DAW_totalScore - DAM_totalScore} puntos`
-    : DAW_totalScore < DAM_totalScore
-    ? `En puntuación, gana 𝐃𝐀𝐌 con una diferencia de ${DAM_totalScore - DAW_totalScore} puntos`
-    : "Hay un empate en la puntuación de ambos clanes";
+  const scoreComparisons = [
+    { clan: "DAW", total: DAW_totalScore },
+    { clan: "DAM", total: DAM_totalScore },
+    { clan: "loosers.js", total: loosers_totalScore },
+  ];
+  scoreComparisons.sort((a, b) => b.total - a.total);
+
+  const [winner] = scoreComparisons;
+  const runnerUps = scoreComparisons.filter(
+    (clan) => clan.total === scoreComparisons[1].total
+  );
+
+  if (runnerUps.length === 0) {
+    return `En puntuación, gana ${winner.clan} con ${winner.total} puntos`;
+  } else {
+    return `Hay un empate en la puntuación entre ${runnerUps
+      .map((clan) => clan.clan)
+      .join(" y ")} con ${runnerUps[0].total} puntos`;
+  }
 }
