@@ -1,23 +1,5 @@
 [
   {
-    "date": "2023-10-31T21:30:55.359Z",
-    "DAW_totalHonor": 1484,
-    "DAW_totalScore": 1451,
-    "DAM_totalHonor": 4139,
-    "DAM_totalScore": 3929,
-    "loosers_totalHonor": 1,
-    "loosers_totalScore": 0
-  },
-  {
-    "date": "2023-11-01T21:30:54.954Z",
-    "DAW_totalHonor": 1488,
-    "DAW_totalScore": 1457,
-    "DAM_totalHonor": 4155,
-    "DAM_totalScore": 3945,
-    "loosers_totalHonor": 1,
-    "loosers_totalScore": 0
-  },
-  {
     "date": "2023-11-02T21:30:52.204Z",
     "DAW_totalHonor": 1490,
     "DAW_totalScore": 1459,
@@ -68,6 +50,15 @@
     "DAW_totalScore": 1537,
     "DAM_totalHonor": 4335,
     "DAM_totalScore": 4115,
+    "loosers_totalHonor": 1,
+    "loosers_totalScore": 0
+  },
+  {
+    "date": "2023-11-08T21:31:02.350Z",
+    "DAW_totalHonor": 1624,
+    "DAW_totalScore": 1565,
+    "DAM_totalHonor": 4343,
+    "DAM_totalScore": 4123,
     "loosers_totalHonor": 1,
     "loosers_totalScore": 0
   }
