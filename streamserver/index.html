@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de Video.js</title>
+  <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/7.17.0/video.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.3.4/flv.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-flvjs@0.2.0/dist/videojs-flvjs.min.js"></script>
+</head>
+
+<body>
+  <video id="videojs-flvjs-player" class="video-js vjs-default-skin" controls width="400px">
+    <source src="http://localhost:8081/live/test.flv" type='video/x-flv'>
+  </video>
+  <script>
+    videojs('videojs-flvjs-player', {});
+  </script>
+</body>
+
+</html>

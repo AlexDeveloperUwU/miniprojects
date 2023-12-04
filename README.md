@@ -55,6 +55,9 @@ Distintos scripts de CMD que sirven para utilizar en pyWinContext, optimizando t
 ### Local Message Sender
 Local Message Sender es una aplicación Electron que te permite enviar mensajes a otros equipos en tu red local utilizando el comando ```msg``` en Windows. Proporciona una interfaz amigable para ingresar la dirección IP del equipo de destino y el mensaje que deseas enviar.
 
+### Stream Server
+Un servidor de streaming de video que utiliza Node Media Server y Video.js para facilitar la transmisión de video sin problemas. Node Media Server se utiliza para manejar la transmisión mediante el Protocolo de Mensajes en Tiempo Real (RTMP), mientras que Video.js mejora la interfaz de usuario y proporciona un reproductor de video personalizable.
+
 ## Palabras finales sobre los proyectos
 
 Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tareas específicas. Siéntete libre de explorar y utilizar estos scripts según tus necesidades. ¡Espero que encuentres útiles estas herramientas!
