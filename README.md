@@ -18,7 +18,7 @@ Con este script, puedes automatizar la creación de una lista de reproducción e
 
 ### Reddit Meme Scrapper
 
-Este proyecto, disponible en el repositorio [Reddit-Meme-Scrapper](https://github.com/AlexDevFiles/reddit-meme-database), se encarga de hacer "scrapping" en la página de Reddit para recopilar y guardar memes automáticamente. Una forma divertida de mantener tu base de datos de memes actualizada.
+Este proyecto (ahora muerto por que Reddit bloqueó nuestro acceso a los subreddits desde cualquiera de nuestros servers y GitHub) se encarga de hacer "scrapping" en la página de Reddit para recopilar y guardar memes automáticamente. Una forma divertida de mantener tu base de datos de memes actualizada.
 
 En este repositorio hay un .zip que contiene una copia exacta del código por si el repositorio se llega a tirar.
 
