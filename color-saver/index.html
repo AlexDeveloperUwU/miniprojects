@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Saver</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin: 20px;
+      }
+      #colorInput {
+          width: 50%;
+          padding: 10px;
+          margin-bottom: 10px;
+      }
+      table {
+          width: 80%;
+          margin: 20px auto;
+          border-collapse: collapse;
+      }
+      th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Saver</h1>
+
+    <input type="text" id="colorInput" placeholder="Introduce el código hexadecimal" /><br />
+    <button onclick="saveColor()">Guardar Color</button>
+
+    <table id="colorTable">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Código Hex</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      var colors = JSON.parse(localStorage.getItem("colors")) || [];
+
+      function saveColor() {
+        var colorInput = document.getElementById("colorInput");
+        var color = colorInput.value;
+
+        if (color) {
+          colors.push(color);
+          updateColorTable();
+          saveColorsToLocalStorage();
+          colorInput.value = "";
+        }
+      }
+
+      function deleteColor(rowIndex) {
+        colors.splice(rowIndex, 1);
+        updateColorTable();
+        saveColorsToLocalStorage();
+      }
+
+      function showColor(color) {
+        var colorTableBody = document.querySelector("#colorTable tbody");
+
+        var newRow = colorTableBody.insertRow();
+
+        var colorCell = newRow.insertCell(0);
+        colorCell.style.backgroundColor = color;
+
+        var hexCell = newRow.insertCell(1);
+        hexCell.textContent = color;
+
+        var deleteCell = newRow.insertCell(2);
+        var deleteButton = document.createElement("button");
+        deleteButton.innerHTML = "Eliminar";
+        deleteButton.onclick = function () {
+          var rowIndex = this.closest("tr").rowIndex - 1;
+          deleteColor(rowIndex);
+        };
+        deleteCell.appendChild(deleteButton);
+      }
+
+      function updateColorTable() {
+        var colorTableBody = document.querySelector("#colorTable tbody");
+        colorTableBody.innerHTML = "";
+
+        for (var i = 0; i < colors.length; i++) {
+          var newRow = colorTableBody.insertRow();
+
+          var colorCell = newRow.insertCell(0);
+          colorCell.style.backgroundColor = colors[i];
+
+          var hexCell = newRow.insertCell(1);
+          hexCell.textContent = colors[i];
+
+          var deleteCell = newRow.insertCell(2);
+          var deleteButton = document.createElement("button");
+          deleteButton.innerHTML = "Eliminar";
+          deleteButton.onclick = function () {
+            var rowIndex = this.closest("tr").rowIndex - 1;
+            deleteColor(rowIndex);
+          };
+          deleteCell.appendChild(deleteButton);
+        }
+      }
+
+      function saveColorsToLocalStorage() {
+        localStorage.setItem("colors", JSON.stringify(colors));
+      }
+
+      updateColorTable();
+    </script>
+  </body>
+</html>
