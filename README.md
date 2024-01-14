@@ -1,8 +1,8 @@
-# Mis Scripts y Mini-Proyectos
+# Miniprojects
 
 Este es un conjunto de mini-proyectos que he desarrollado por diversas razones y que son lo suficientemente pequeños como para no necesitar un repositorio dedicado para cada uno de ellos.
 
-## Listado de Proyectos
+## Listado de Proyectos [14 en total]
 
 ### Spotify Downloader
 
