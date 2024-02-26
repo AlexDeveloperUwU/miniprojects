@@ -1,5 +1,7 @@
 /codewars/node_modules
 /msgsender/v1/node_modules
 /msgsender/v2/node_modules
+/spotify-now-playing/node_modules
 /msgsender/v2/public/assets
 /pdfgen/node_modules
+/spotify-now-playing/.env

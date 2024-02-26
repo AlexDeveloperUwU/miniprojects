@@ -2,7 +2,7 @@
 
 Este es un conjunto de mini-proyectos que he desarrollado por diversas razones y que son lo suficientemente pequeños como para no necesitar un repositorio dedicado para cada uno de ellos.
 
-## Listado de Proyectos [14 en total]
+## Listado de Proyectos [15 en total]
 
 ### Spotify Downloader
 
@@ -61,6 +61,9 @@ Un servidor de streaming de video que utiliza Node Media Server y Video.js para 
 ###  Color Saver
 
 Color Saver es una aplicación web sencilla que permite a los usuarios ingresar manualmente códigos hexadecimales de colores y guardarlos para su referencia posterior.
+
+### Spotify Now Playing
+Una pequeña web app que te muestra la canción que estás escuchando en Spotify, pensado para ser usado en otros proyectos.
 
 ## Palabras finales sobre los proyectos
 
