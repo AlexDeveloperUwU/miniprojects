@@ -63,8 +63,13 @@ Un servidor de streaming de video que utiliza Node Media Server y Video.js para 
 Color Saver es una aplicación web sencilla que permite a los usuarios ingresar manualmente códigos hexadecimales de colores y guardarlos para su referencia posterior.
 
 ### Spotify Now Playing
+
 Una pequeña web app que te muestra la canción que estás escuchando en Spotify, pensado para ser usado en otros proyectos.
 
-## Palabras finales sobre los proyectos
+### Phone Wallpaper Generator
+
+Este script te permite generar fondos de pantalla a partir de las imágenes que contenga una carpeta. Las adaptará a 9:16 y las guardará en una carpeta con el nombre que le introduzcas.
+
+## Información extra
 
 Estos mini-proyectos son ejemplos de soluciones simples y automatizadas para tareas específicas. Siéntete libre de explorar y utilizar estos scripts según tus necesidades. ¡Espero que encuentres útiles estas herramientas!
