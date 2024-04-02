@@ -20,7 +20,7 @@ Con este script, puedes automatizar la creación de una lista de reproducción e
 
 Este proyecto (ahora muerto por que Reddit bloqueó nuestro acceso a los subreddits desde cualquiera de nuestros servers y GitHub) se encarga de hacer "scrapping" en la página de Reddit para recopilar y guardar memes automáticamente. Una forma divertida de mantener tu base de datos de memes actualizada.
 
-En este repositorio hay un .zip que contiene una copia exacta del código por si el repositorio se llega a tirar.
+En este repositorio hay un .zip que contiene una copia exacta del código.
 
 ### LogrosBot
 
@@ -53,9 +53,11 @@ Este script de Node.js está diseñado para renombrar archivos en una carpeta el
 Distintos scripts de CMD que sirven para utilizar en pyWinContext, optimizando tiempo deshaciéndose de tareas repetitivas
 
 ### Local Message Sender
+
 Local Message Sender es una aplicación Electron que te permite enviar mensajes a otros equipos en tu red local utilizando el comando ```msg``` en Windows. Proporciona una interfaz amigable para ingresar la dirección IP del equipo de destino y el mensaje que deseas enviar.
 
 ### Stream Server
+
 Un servidor de streaming de video que utiliza Node Media Server y Video.js para facilitar la transmisión de video sin problemas. Node Media Server se utiliza para manejar la transmisión mediante el Protocolo de Mensajes en Tiempo Real (RTMP), mientras que Video.js mejora la interfaz de usuario y proporciona un reproductor de video personalizable.
 
 ###  Color Saver

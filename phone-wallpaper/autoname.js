@@ -10,6 +10,7 @@ const rl = readline.createInterface({
 
 async function procesarImagenes(inputFolder, outputFolder) {
   const files = fs.readdirSync(inputFolder);
+  let contador = 0;
 
   for (const file of files) {
     const filePath = path.join(inputFolder, file);
@@ -29,17 +30,11 @@ async function procesarImagenes(inputFolder, outputFolder) {
 
       await image.cover(width, height);
 
-      if (path.extname(file).toLowerCase() !== ".jpg") {
-        await image
-          .quality(100)
-          .writeAsync(path.join(outputFolder, `${path.parse(file).name}-vertical.jpg`));
-      } else {
-        await image
-          .quality(100)
-          .writeAsync(
-            path.join(outputFolder, `${path.parse(file).name}-vertical${path.parse(file).ext}`)
-          );
-      }
+      const ext = path.extname(file);
+      const outputName = `bg${contador}`;
+      contador++;
+
+      await image.quality(100).writeAsync(path.join(outputFolder, outputName + ".jpg"));
       console.log(`Imagen ${file} procesada.`);
     }
   }
