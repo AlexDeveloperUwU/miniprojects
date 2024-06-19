@@ -2,7 +2,7 @@
 
 Este es un conjunto de mini-proyectos que he desarrollado por diversas razones y que son lo suficientemente pequeños como para no necesitar un repositorio dedicado para cada uno de ellos.
 
-## Listado de Proyectos [16 en total]
+## Listado de Proyectos [15 en total]
 
 ### Spotify Downloader
 
@@ -43,10 +43,6 @@ En esta carpeta encontrarás cada uno de los ejercicios resueltos en una subcarp
 ### Currency Exchange Notifier
 
 Este script de Node.js verifica periódicamente la tasa de conversión de USD a EUR y envía una notificación a un canal de Discord cuando la tasa es igual o superior a una tasa deseada. Puedes utilizarlo para estar al tanto de las tasas de cambio favorables.
-
-### Rename de Archivos
-
-Este script de Node.js está diseñado para renombrar archivos en una carpeta eliminando la primera letra de sus nombres. Es útil si deseas realizar una operación de renombrado en masa en una carpeta que contiene archivos.
 
 ### pyWinContext
 
