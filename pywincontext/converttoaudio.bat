@@ -18,16 +18,13 @@ if not exist "!inputFile!" (
 )
 
 rem Obtener el nombre base del archivo de entrada (sin extensión)
-for %%A in ("!inputFile!") do (
-  set "fileName=%%~nA"
-  set "fileExtension=%%~xA"
-)
+for %%A in ("!inputFile!") do set "fileName=%%~nxA"
 
-rem Construir el nombre del archivo de salida optimizado
-set "outputFile=!fileName!_optimized!fileExtension!"
+rem Construir el nombre del archivo de salida con extensión .mp3
+set "outputFile=!fileName:.mp4=.mp3!"
 
-rem Llamar a ffmpeg para optimizar el archivo de entrada
-ffmpeg -i "!inputFile!" -c:v libx264 -crf 23 -c:a aac -b:a 128k "!outputFile!"
+rem Llamar a ffmpeg para convertir el archivo de entrada a MP3
+ffmpeg -i "!inputFile!" -vn -c:a libmp3lame -q:a 2 "!outputFile!"
 
 echo Proceso completado. El archivo "!outputFile!" ha sido creado.
 pause
