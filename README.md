@@ -2,7 +2,7 @@
 
 Este es un conjunto de mini-proyectos que he desarrollado por diversas razones y que son lo suficientemente pequeños como para no necesitar un repositorio dedicado para cada uno de ellos.
 
-## Listado de Proyectos [16 en total]
+## Listado de Proyectos [14 en total]
 
 ### Audio Merger
 
@@ -17,10 +17,6 @@ En esta carpeta encontrarás cada uno de los ejercicios resueltos en una subcarp
 ### Color Saver
 
 Color Saver es una aplicación web sencilla que permite a los usuarios ingresar manualmente códigos hexadecimales de colores y guardarlos para su referencia posterior.
-
-### Currency Exchange Notifier
-
-Este script de Node.js verifica periódicamente la tasa de conversión de USD a EUR y envía una notificación a un canal de Discord cuando la tasa es igual o superior a una tasa deseada. Puedes utilizarlo para estar al tanto de las tasas de cambio favorables.
 
 ### Local Message Sender
 
@@ -63,10 +59,6 @@ Un servidor de streaming de video que utiliza Node Media Server y Video.js para 
 ### Summer Catches Jar
 
 Un conjunto de scripts de Python diseñados para obtener el logro de la jarra, que es tocar el piano para llenar de luciérnagas las 4 jarras sin romper ninguna y fallar. El script lo he creado junto a @GabrielgsdCIUwU debido a que este minijuego era demasiado complicado, incluso para gente con un muy buen nivel en Osu! y juegos similares.
-
-### Twitter Tweet Deletion Script
-
-Este proyecto ofrece un script de JavaScript que puede utilizarse en el navegador para eliminar automáticamente los tweets de tu cuenta de Twitter desde la página de perfil. El script interactúa con la interfaz de Twitter y hace clic en los botones necesarios para eliminar los tweets no deseados.
 
 ### Video Optimizer
 
