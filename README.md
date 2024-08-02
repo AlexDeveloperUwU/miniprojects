@@ -26,6 +26,10 @@ Local Message Sender es una aplicación Electron que te permite enviar mensajes 
 
 LogrosBot es un bot de Discord que reacciona a los mensajes en un canal específico con un emoji en forma de copa. Puede ser una manera humorística y motivadora de reconocer logros o hitos en tu servidor de Discord.
 
+### Melendi Tickets Tracker
+
+Un pequeño web scrapper realizado para poder saber cuando salen las entradas de un concierto de Melendi que se llevaba a cabo aquí en una parte de Galicia, ya que no había fecha publicada y por tanto, para estar pendiente de ello, hice un scrapper que me notifica cuando salgan a la venta y me envía por Discord un mensaje con el enlace
+
 ### Phone Wallpaper Generator
 
 Este script te permite generar fondos de pantalla a partir de las imágenes que contenga una carpeta. Las adaptará a 9:16 y las guardará en una carpeta con el nombre que le introduzcas.
