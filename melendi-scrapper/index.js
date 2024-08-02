@@ -75,7 +75,7 @@ function webhookSend(data) {
     webhook.send({ content, embeds: [embed], components: row ? [row] : [] });
 }
 
-// Programa el scraper para que se ejecute cada 30 segundos
+// Programa el scraper para que se ejecute cada 5 minutos
 cron.schedule('*/5 * * * *', () => {
     console.log('Comprobando entradas...');
     checkTickets();
