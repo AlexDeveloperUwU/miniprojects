@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificador de relación de aspecto</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+      }
+      .message {
+          margin-top: 20px;
+          padding: 10px;
+          display: none;
+      }
+      .ok {
+          background-color: #d4edda;
+          color: #155724;
+      }
+      .warning {
+          background-color: #f8d7da;
+          color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Subir una imagen</h1>
+    <input type="file" id="fileInput" accept="image/*" />
+    <div id="message" class="message"></div>
+
+    <script>
+      document.getElementById("fileInput").addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+          const img = new Image();
+          img.src = URL.createObjectURL(file);
+
+          img.onload = function () {
+            const width = img.width;
+            const height = img.height;
+            const aspectRatio = width / height;
+
+            const messageDiv = document.getElementById("message");
+            messageDiv.style.display = "block";
+
+            if (Math.abs(aspectRatio - 9 / 16) < 0.01) { // Se permite una pequeña tolerancia
+              messageDiv.textContent = "OK: La imagen tiene una relación de aspecto de 9:16.";
+              messageDiv.className = "message ok";
+            } else {
+              messageDiv.textContent =
+                "Warning: La imagen no tiene una relación de aspecto de 9:16.";
+              messageDiv.className = "message warning";
+            }
+
+            // Liberar el objeto URL
+            URL.revokeObjectURL(img.src);
+          };
+        }
+      });
+    </script>
+  </body>
+</html>

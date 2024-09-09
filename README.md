@@ -18,6 +18,10 @@ En esta carpeta encontrarás cada uno de los ejercicios resueltos en una subcarp
 
 Color Saver es una aplicación web sencilla que permite a los usuarios ingresar manualmente códigos hexadecimales de colores y guardarlos para su referencia posterior.
 
+### Demos
+
+Esta carpeta contiene una colección de demos que he creado a lo largo del tiempo. Cada una de ellas fue realizada con el objetivo de experimentar, probar nuevas ideas y adquirir conocimientos en distintos ámbitos.
+
 ### Local Message Sender
 
 Local Message Sender es una aplicación Electron que te permite enviar mensajes a otros equipos en tu red local utilizando el comando ```msg``` en Windows. Proporciona una interfaz amigable para ingresar la dirección IP del equipo de destino y el mensaje que deseas enviar.
@@ -25,10 +29,6 @@ Local Message Sender es una aplicación Electron que te permite enviar mensajes 
 ### LogrosBot
 
 LogrosBot es un bot de Discord que reacciona a los mensajes en un canal específico con un emoji en forma de copa. Puede ser una manera humorística y motivadora de reconocer logros o hitos en tu servidor de Discord.
-
-### Melendi Tickets Tracker
-
-Un pequeño web scrapper realizado para poder saber cuando salen las entradas de un concierto de Melendi que se llevaba a cabo aquí en una parte de Galicia, ya que no había fecha publicada y por tanto, para estar pendiente de ello, hice un scrapper que me notifica cuando salgan a la venta y me envía por Discord un mensaje con el enlace
 
 ### Phone Wallpaper Generator
 
