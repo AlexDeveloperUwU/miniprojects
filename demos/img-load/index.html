@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cargar Imagen</title>
+    <style>
+      #image-container {
+          position: relative;
+          width: 150px;
+          height: 150px;
+      }
+      #image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Imagen</h1>
+    <div id="image-container">
+      <img id="image" src="/image?filename=test.png&thumb=true" alt="Imagen" />
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const image = document.getElementById("image");
+        const originalImageUrl = "/image?filename=test.png&thumb=false";
+        const originalImage = new Image();
+        originalImage.src = originalImageUrl;
+        originalImage.onload = () => {
+          image.src = originalImageUrl;
+        };
+      });
+    </script>
+  </body>
+</html>
