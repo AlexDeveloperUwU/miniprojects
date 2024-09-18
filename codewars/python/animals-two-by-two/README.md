@@ -22,6 +22,6 @@ False
 ## Información del Kata realizado:
 Creado por: S666
 
-Publicado el: 7/19/2016
+Publicado el: 19/7/2016
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/578de3801499359921000130)

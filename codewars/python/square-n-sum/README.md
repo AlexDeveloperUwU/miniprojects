@@ -11,6 +11,6 @@ In Racket, use a list instead of an array, so '(1 2 2) should return 9.
 ## Información del Kata realizado:
 Creado por: jhoffner
 
-Publicado el: 4/5/2013
+Publicado el: 5/4/2013
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/515e271a311df0350d00000f)

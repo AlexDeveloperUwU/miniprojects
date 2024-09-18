@@ -19,6 +19,6 @@ Your function must return `true` if the requirements are met or `false` otherwis
 ## Información del Kata realizado:
 Creado por: acraileanu
 
-Publicado el: 7/10/2015
+Publicado el: 10/7/2015
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/559f89598c0d6c9b31000125)

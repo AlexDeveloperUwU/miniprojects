@@ -12,6 +12,6 @@ For input `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]`, you should
 ## Información del Kata realizado:
 Creado por: Dentzil
 
-Publicado el: 6/23/2016
+Publicado el: 23/6/2016
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/576bb71bbbcf0951d5000044)

@@ -24,6 +24,6 @@ Error checking for text strings or other invalid inputs is not required, only va
 ## Información del Kata realizado:
 Creado por: JulianNicholls
 
-Publicado el: 11/16/2013
+Publicado el: 16/11/2013
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/5287e858c6b5a9678200083c)

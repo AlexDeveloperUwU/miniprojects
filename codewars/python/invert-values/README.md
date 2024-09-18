@@ -1,16 +1,14 @@
 # Invert values
 Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
 
-~~~if-not:racket
 ```
-invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
-invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
-invert([]) == []
+[1, 2, 3, 4, 5] --> [-1, -2, -3, -4, -5]
+[1, -2, 3, -4, 5] --> [-1, 2, -3, 4, -5]
+[] --> []
 ```
-~~~
 
-```if:javascript,python,ruby,php,elixir,dart,go
-You can assume that all values are integers. Do not mutate the input array/list.
+```if:javascript,python,ruby,php,elixir,dart,go,lua
+You can assume that all values are integers. Do not mutate the input array.
 ```
 
 ```if:c,riscv
@@ -18,13 +16,6 @@ You can assume that all values are integers. Do not mutate the input array/list.
 - All values are greater than `INT_MIN`
 - The input should be modified, not returned.
 ```
-~~~if:racket
-```racket
-(invert '(1 2 3 4 5))   ; '(-1 -2 -3 -4 -5)
-(invert '(1 -2 3 -4 5)) ; '(-1 2 -3 4 -5)
-(invert '())            ; '()
-```
-~~~
 
 ~~~if:riscv
 RISC-V: The function signature is:
@@ -40,6 +31,6 @@ The input array is `arr` which contains `size` elements. Mutate the array in-pla
 ## Información del Kata realizado:
 Creado por: user7657844
 
-Publicado el: 2/7/2017
+Publicado el: 7/2/2017
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/5899dc03bc95b1bf1b0000ad)

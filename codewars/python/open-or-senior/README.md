@@ -20,6 +20,6 @@ output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 ## Información del Kata realizado:
 Creado por: Brynx
 
-Publicado el: 3/13/2015
+Publicado el: 13/3/2015
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/5502c9e7b3216ec63c0001aa)

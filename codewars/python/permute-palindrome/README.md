@@ -15,6 +15,6 @@ The brute force approach would be to generate _all_ the permutations of the stri
 ## Información del Kata realizado:
 Creado por: kgashok
 
-Publicado el: 2/23/2017
+Publicado el: 23/2/2017
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/58ae6ae22c3aaafc58000079)

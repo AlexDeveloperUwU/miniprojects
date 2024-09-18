@@ -50,6 +50,6 @@ If you like this Kata, please try:
 ## Información del Kata realizado:
 Creado por: KenKamau
 
-Publicado el: 10/25/2017
+Publicado el: 26/10/2017
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/59f11118a5e129e591000134)

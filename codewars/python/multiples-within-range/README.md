@@ -11,6 +11,6 @@ NOTICE:
 ## Información del Kata realizado:
 Creado por: mmalkavian
 
-Publicado el: 11/26/2016
+Publicado el: 26/11/2016
 
 URL: [Haz click aquí para ir al Kata](https://www.codewars.com/kata/583989556754d6f4c700018e)
