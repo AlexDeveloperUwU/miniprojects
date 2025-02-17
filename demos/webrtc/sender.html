@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Sender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans p-8">
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-semibold mb-4">Sender</h1>
+        
+        <div class="mb-4">
+            <textarea id="offer" placeholder="Oferta SDP" rows="6" class="w-full p-2 border border-gray-300 rounded-md" readonly></textarea>
+        </div>
+        
+        <button id="generateOffer" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 mb-4">Generar Oferta</button>
+        
+        <div class="mb-4">
+            <textarea id="answer" placeholder="Respuesta SDP del receptor" rows="6" class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+        </div>
+
+        <button id="setAnswer" class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 mb-4" disabled>Establecer Respuesta</button>
+
+        <input id="message" placeholder="Escribe un mensaje" class="w-full p-2 border border-gray-300 rounded-md mb-4" />
+        
+        <button id="send" class="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 mb-4" disabled>Enviar</button>
+
+        <div id="log" class="bg-gray-50 p-4 rounded-md h-48 overflow-y-auto border border-gray-300"></div>
+    </div>
+
+    <script>
+        let peerConnection;
+        let dataChannel;
+
+        const log = (message) => {
+            const logDiv = document.getElementById('log');
+            logDiv.innerHTML += `<p>${message}</p>`;
+        };
+
+        document.getElementById('generateOffer').addEventListener('click', async () => {
+            peerConnection = new RTCPeerConnection();
+            dataChannel = peerConnection.createDataChannel("chat");
+
+            dataChannel.onopen = () => {
+                log("Canal de datos abierto");
+                document.getElementById('send').disabled = false;
+            };
+
+            dataChannel.onclose = () => log("Canal de datos cerrado");
+
+            peerConnection.onicecandidate = ({ candidate }) => {
+                if (candidate) {
+                    document.getElementById('offer').value = JSON.stringify(peerConnection.localDescription);
+                }
+            };
+
+            const offer = await peerConnection.createOffer();
+            await peerConnection.setLocalDescription(offer);
+            log("Oferta SDP generada");
+            document.getElementById('setAnswer').disabled = false;
+        });
+
+        document.getElementById('setAnswer').addEventListener('click', async () => {
+            const answer = JSON.parse(document.getElementById('answer').value);
+            await peerConnection.setRemoteDescription(answer);
+            log("Respuesta SDP establecida");
+        });
+
+        document.getElementById('send').addEventListener('click', () => {
+            const message = document.getElementById('message').value;
+            if (dataChannel.readyState === "open") {
+                dataChannel.send(message);
+                log("Mensaje enviado: " + message);
+            } else {
+                log("Canal de datos no está abierto");
+            }
+        });
+    </script>
+</body>
+</html>
