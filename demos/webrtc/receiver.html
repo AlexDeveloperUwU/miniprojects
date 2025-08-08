@@ -10,50 +10,136 @@
     <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-2xl font-semibold mb-4">Receiver</h1>
         
+        <div id="sdpExchangeSection">
+            <div class="mb-4">
+                <label for="offer" class="block text-gray-700 text-sm font-bold mb-2">Oferta SDP del Emisor:</label>
+                <textarea id="offer" placeholder="Pega aquí la oferta SDP del emisor" rows="6" class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+            </div>
+            
+            <button id="setOffer" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 mb-4">Establecer Oferta y Generar Respuesta</button>
+            
+            <div class="mb-4">
+                <label for="answer" class="block text-gray-700 text-sm font-bold mb-2">Tu Respuesta SDP:</label>
+                <textarea id="answer" placeholder="Tu respuesta SDP aparecerá aquí. Cópiala y pégala en el emisor." rows="6" class="w-full p-2 border border-gray-300 rounded-md" readonly></textarea>
+            </div>
+            <hr class="my-6 border-gray-300">
+        </div>
+
+        <h2 class="text-xl font-semibold mb-4">Chat</h2>
+        
         <div class="mb-4">
-            <textarea id="offer" placeholder="Oferta SDP del emisor" rows="6" class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+            <input type="text" id="message" placeholder="Escribe un mensaje..." class="w-full p-2 border border-gray-300 rounded-md" disabled />
         </div>
         
-        <button id="setOffer" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 mb-4">Establecer Oferta</button>
-        
-        <div class="mb-4">
-            <textarea id="answer" placeholder="Respuesta SDP" rows="6" class="w-full p-2 border border-gray-300 rounded-md" readonly></textarea>
-        </div>
+        <button id="send" class="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 mb-4" disabled>Enviar Mensaje</button>
 
         <div id="log" class="bg-gray-50 p-4 rounded-md h-48 overflow-y-auto border border-gray-300"></div>
     </div>
 
     <script>
         let peerConnection;
+        let dataChannel;
 
         const log = (message) => {
             const logDiv = document.getElementById('log');
-            logDiv.innerHTML += `<p>${message}</p>`;
+            logDiv.innerHTML += `<p class="mb-1">${message}</p>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
         };
 
-        document.getElementById('setOffer').addEventListener('click', async () => {
-            peerConnection = new RTCPeerConnection();
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('send');
+        const setOfferButton = document.getElementById('setOffer');
+        const offerTextarea = document.getElementById('offer');
+        const answerTextarea = document.getElementById('answer');
+        const sdpExchangeSection = document.getElementById('sdpExchangeSection');
 
-            peerConnection.ondatachannel = (event) => {
-                const receiveChannel = event.channel;
+        setOfferButton.addEventListener('click', async () => {
+            log("Iniciando conexión como receptor...");
+            try {
+                peerConnection = new RTCPeerConnection();
 
-                receiveChannel.onopen = () => log("Canal de datos abierto");
-                receiveChannel.onmessage = (event) => log("Mensaje recibido: " + event.data);
-                receiveChannel.onclose = () => log("Canal de datos cerrado");
-            };
+                peerConnection.ondatachannel = (event) => {
+                    log(`Canal de datos recibido: ${event.channel.label}`);
+                    sdpExchangeSection.classList.add('hidden');
+                    dataChannel = event.channel;
 
-            peerConnection.onicecandidate = ({ candidate }) => {
-                if (candidate) {
-                    document.getElementById('answer').value = JSON.stringify(peerConnection.localDescription);
+                    dataChannel.onopen = () => {
+                        log("Canal de datos abierto y listo para enviar/recibir.");
+                        messageInput.disabled = false;
+                        sendButton.disabled = false;
+                        messageInput.focus();
+                    };
+                    dataChannel.onmessage = (event) => log("Mensaje recibido: " + event.data);
+                    dataChannel.onclose = () => {
+                        log("Canal de datos cerrado.");
+                        messageInput.disabled = true;
+                        sendButton.disabled = true;
+                    };
+                    dataChannel.onerror = (error) => log("Error en el canal de datos: " + error);
+                };
+
+                peerConnection.onicecandidate = ({ candidate }) => {
+                    if (candidate) {
+                        answerTextarea.value = JSON.stringify(peerConnection.localDescription);
+                        log("Candidato ICE generado. Actualizando Respuesta SDP.");
+                    } else {
+                        log("Todos los candidatos ICE del receptor han sido recolectados.");
+                    }
+                };
+
+                peerConnection.oniceconnectionstatechange = () => {
+                    log(`Estado de conexión ICE: ${peerConnection.iceConnectionState}`);
+                    if (peerConnection.iceConnectionState === 'completed') {
+                        log("Conexión WebRTC establecida!");
+                        sdpExchangeSection.classList.add('hidden');
+                        log("Sección de intercambio SDP oculta.");
+                    }
+                };
+
+                const offerSdp = offerTextarea.value;
+                if (!offerSdp) {
+                    log("Error: Por favor, pega la oferta SDP del emisor.");
+                    return;
                 }
-            };
 
-            const offer = JSON.parse(document.getElementById('offer').value);
-            await peerConnection.setRemoteDescription(offer);
+                const offer = JSON.parse(offerSdp);
+                log("Oferta SDP recibida y parseada.");
 
-            const answer = await peerConnection.createAnswer();
-            await peerConnection.setLocalDescription(answer);
-            log("Respuesta SDP generada");
+                await peerConnection.setRemoteDescription(offer);
+                log("Oferta SDP del emisor establecida.");
+
+                const answer = await peerConnection.createAnswer();
+                log("Respuesta SDP generada.");
+
+                await peerConnection.setLocalDescription(answer);
+                log("Respuesta SDP local establecida. Cópiala en el emisor.");
+
+            } catch (error) {
+                log("Error al establecer la oferta o generar la respuesta: " + error.message);
+                console.error("WebRTC Error:", error);
+            }
+        });
+
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message === "") {
+                log("No puedes enviar un mensaje vacío.");
+                return;
+            }
+
+            if (dataChannel && dataChannel.readyState === "open") {
+                dataChannel.send(message);
+                log("Mensaje enviado: " + message);
+                messageInput.value = "";
+            } else {
+                log("Error: Canal de datos no está abierto o no existe.");
+            }
+        });
+
+        messageInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                sendButton.click();
+            }
         });
     </script>
 </body>
